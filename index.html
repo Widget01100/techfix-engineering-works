@@ -3,20 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TECHFIX ENGINEERING WORKS</title>
+  <title>TechFix Engineering Works | Precision. Performance. Perfection.</title>
+
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="TechFix Engineering Works provides expert engineering, fabrication, and machine maintenance services for industrial clients in Kenya and beyond. Precision. Performance. Perfection.">
+  <meta name="keywords" content="TechFix, Engineering, Fabrication, Machine Maintenance, Industrial Services, Kenya, Welding, Repair, Machining">
+  <meta name="author" content="TechFix Engineering Works">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="TechFix Engineering Works | Precision. Performance. Perfection." />
+  <meta property="og:description" content="Expert engineering, fabrication, and maintenance services for industrial excellence." />
+  <meta property="og:image" content="https://widget01100.github.io/techfix-engineering-works/media/images/Lathe_works.jpg" />
+  <meta property="og:url" content="https://widget01100.github.io/techfix-engineering-works/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="media/images/favicon.png" />
+
+  <!-- Robots -->
+  <meta name="robots" content="index, follow" />
 </head>
 
 <body>
-  <!-- Header / Hero Section -->
-  <section class="hero">
-    <div class="overlay">
-      <h1>Welcome to TECHFIX ENGINEERING WORKS</h1>
-      <p>Precision Engineering for Every Need</p>
-      <a href="services.html" class="btn-primary">Explore Our Services</a>
-    </div>
-  </section>
-
   <!-- Navigation -->
   <nav class="navbar">
     <a href="index.html" class="active">Home</a>
@@ -26,13 +36,22 @@
     <a href="contact.html">Contact</a>
   </nav>
 
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="overlay">
+      <h1>Welcome to TECHFIX ENGINEERING WORKS</h1>
+      <p>Precision. Performance. Perfection.</p>
+      <a href="services.html" class="btn-primary">Explore Our Services</a>
+    </div>
+  </section>
+
   <!-- About Preview -->
   <section class="about-preview fade-in">
     <h2>About Us</h2>
     <p>
       At TECHFIX ENGINEERING WORKS, we combine craftsmanship and technology
-      to deliver precision fabrication, machining, and technical repair services
-      across Kenya. We guarantee performance and reliability in every job.
+      to deliver precision fabrication, machining, and technical maintenance
+      across Kenya. We guarantee performance and reliability in every project.
     </p>
     <a href="About.html" class="btn-secondary">Learn More</a>
   </section>
@@ -43,7 +62,7 @@
       <img src="media/images/Lathe_works.jpg" alt="Lathe Work" />
       <img src="media/images/Welding1.jpg" alt="Welding" />
       <img src="media/images/Crane_repair1.jpg" alt="Crane Repair" />
-      <img src="media/images/Customization.jpg" alt="Customization" />
+      <img src="media/images/Customization.jpg" alt="Customization Work" />
     </div>
   </section>
 
@@ -60,27 +79,23 @@
 
   <!-- Scripts -->
   <script>
-    // Simple auto-slider
-    let slideIndex = 0;
-    const slides = document.querySelectorAll('.slides img');
-    function showNextSlide() {
-      slides.forEach((img, i) => img.style.display = i === slideIndex ? 'block' : 'none');
-      slideIndex = (slideIndex + 1) % slides.length;
-    }
-    showNextSlide();
-    setInterval(showNextSlide, 3500);
+    let currentIndex = 0;
+    const items = document.querySelectorAll('.slides img');
+    const totalItems = items.length;
 
-    // Scroll animation
-    const faders = document.querySelectorAll('.fade-in');
-    const appearOptions = { threshold: 0.2 };
-    const appearOnScroll = new IntersectionObserver(function(entries, observer){
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('appear');
-        observer.unobserve(entry.target);
+    function showItem(index) {
+      items.forEach((item, i) => {
+        item.style.display = i === index ? 'block' : 'none';
       });
-    }, appearOptions);
-    faders.forEach(fader => appearOnScroll.observe(fader));
+    }
+
+    function nextItem() {
+      currentIndex = (currentIndex + 1) % totalItems;
+      showItem(currentIndex);
+    }
+
+    showItem(currentIndex);
+    setInterval(nextItem, 4000);
   </script>
 </body>
 </html>
