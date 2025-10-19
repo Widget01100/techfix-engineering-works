@@ -1,144 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TECHFIX ENGINEERING WORKS</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TECHFIX ENGINEERING WORKS</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-    <header>
-        <h1>Welcome to TECHFIX ENGINEERING WORKS</h1>
-        <p class="highlight">Precision Engineering for Every Need</p>
-    </header>
-
-    <nav>
-        <a href="#">Home</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <section>
-        <h2>About Us</h2>
-        <p>TECHFIX ENGINEERING WORKS specializes in delivering high-quality engineering solutions, including latheworks, welding, and more. Our expertise ensures precision and durability in every project.</p>
-        <button>Learn More</button>
-    </section>
-
-    <!-- Carousel Section -->
-    <div class="carousel">
-        <div class="carousel-item">
-            <img src="media/images/Lathe_works.jpg" alt="Lathe Work">
-            <p>Precision Lathework</p>
-        </div>
-        <div class="carousel-item">
-            <img src="media/images/Welding1.jpg" alt="Welding">
-            <p>Expert Welding Services</p>
-        </div>
-        <div class="carousel-item">
-            <img src="media/images/Crane_repair1.jpg" alt="Crane Repair">
-            <p>Technical Crane Repair</p>
-        </div>
-        <div class="carousel-item">
-            <img src="media/images/Customization.jpg" alt="Customization">
-            <p>Customized Engineering Solutions</p>
-        </div>
-        <button class="prev">&#x2039;</button>
-        <button class="next">&#x203A;</button>
+  <!-- Header / Hero Section -->
+  <section class="hero">
+    <div class="overlay">
+      <h1>Welcome to TECHFIX ENGINEERING WORKS</h1>
+      <p>Precision Engineering for Every Need</p>
+      <a href="services.html" class="btn-primary">Explore Our Services</a>
     </div>
+  </section>
 
-    <section id="services">
-        <h2>Engineering Services</h2>
-        <ul>
-            <li>
-                <strong>Latheworks:</strong>
-                Precision machining and turning of various materials.
-                <img src="media/images/Lathe_works1.jpg" alt="Lathework Example" width="300">
-            </li>
-            <li>
-                <strong>Pressworks:</strong>
-                Metal stamping and pressing for high-volume production.
-                <img src="media/images/Press_works1.jpg" alt="Pressworks" width="300">
-            </li>
-            <li>
-                <strong>Welding:</strong>
-                Mild steel, steel, cast, and aluminum welding.
-                <img src="media/images/Welding.jpg" alt="Welding Example" width="300">
-            </li>
-            <li>
-                <strong>Motorcycle Frame & Shock Straightening:</strong>
-                Repair and realignment of motorcycle frames and shock absorbers.
-                <img src="media/images/frame_straightening.jpg" alt="Frame Straightening" width="300">
-            </li>
-            <li>
-                <strong>Technical Crane Repair:</strong>
-                Specialized repair services for cranes, ensuring smooth operation.
-                <img src="media/images/Crane_repairs.jpg" alt="Crane Repair" width="300">
-            </li>
-            <li>
-                <strong>Fabrication:</strong>
-                Custom fabrication for machinery and structures.
-                <img src="media/images/Custom_fabrication.jpg" alt="Fabrication Example" width="300">
-            </li>
-        </ul>
-    </section>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="index.html" class="active">Home</a>
+    <a href="services.html">Services</a>
+    <a href="About.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio">
-        <h2>Portfolio Highlights</h2>
-        <div class="portfolio-grid">
-            <div>
-                <img src="media/images/frame_straightening1.jpg" alt="Frame Straightening Example">
-                <p>Frame Straightening Example</p>
-            </div>
-            <div>
-                <img src="media/images/Lathe_works2.jpg" alt="Lathe Work Example">
-                <p>Lathe Work Example</p>
-            </div>
-            <div>
-                <img src="media/images/Shielded_Metal_Arc_Welding_.jpg" alt="Shielded Metal Arc Welding">
-                <p>Shielded Metal Arc Welding</p>
-            </div>
-            <div>
-                <img src="media/images/Owner_Moffat _Shikuku.jpg" alt="Owner Moffat Shikuku">
-                <p>Moffat Shikuku - Founder</p>
-            </div>
-        </div>
-    </section>
+  <!-- About Preview -->
+  <section class="about-preview fade-in">
+    <h2>About Us</h2>
+    <p>
+      At TECHFIX ENGINEERING WORKS, we combine craftsmanship and technology
+      to deliver precision fabrication, machining, and technical repair services
+      across Kenya. We guarantee performance and reliability in every job.
+    </p>
+    <a href="About.html" class="btn-secondary">Learn More</a>
+  </section>
 
-    <footer id="contact">
-        <h2>Contact Us</h2>
-        <p>For inquiries, reach out via:</p>
-        <ul>
-            <li>Email: techfixengineering@gmail.com</li>
-            <li>Phone: +254740248472 / +254797644577</li>
-            <li>Location: Hawkers Market, Kibera Drive, Nairobi</li>
-        </ul>
-        <p>&copy; 2025 TECHFIX ENGINEERING WORKS. All rights reserved.</p>
-    </footer>
+  <!-- Carousel / Slider -->
+  <section class="carousel fade-in">
+    <div class="slides">
+      <img src="media/images/Lathe_works.jpg" alt="Lathe Work" />
+      <img src="media/images/Welding1.jpg" alt="Welding" />
+      <img src="media/images/Crane_repair1.jpg" alt="Crane Repair" />
+      <img src="media/images/Customization.jpg" alt="Customization" />
+    </div>
+  </section>
 
-    <script>
-        // Carousel functionality
-        let currentIndex = 0;
-        const items = document.querySelectorAll('.carousel-item');
-        const prevButton = document.querySelector('.prev');
-        const nextButton = document.querySelector('.next');
+  <!-- Footer -->
+  <footer id="contact">
+    <h2>Contact Us</h2>
+    <ul>
+      <li>Email: techfixengineering@gmail.com</li>
+      <li>Phone: +254740248472 / +254797644577</li>
+      <li>Location: Hawkers Market, Kibera Drive, Nairobi</li>
+    </ul>
+    <p>&copy; 2025 TECHFIX ENGINEERING WORKS. All rights reserved.</p>
+  </footer>
 
-        function showItem(index) {
-            items.forEach((item, i) => {
-                item.style.transform = `translateX(-${index * 100}%)`;
-            });
-        }
+  <!-- Scripts -->
+  <script>
+    // Simple auto-slider
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slides img');
+    function showNextSlide() {
+      slides.forEach((img, i) => img.style.display = i === slideIndex ? 'block' : 'none');
+      slideIndex = (slideIndex + 1) % slides.length;
+    }
+    showNextSlide();
+    setInterval(showNextSlide, 3500);
 
-        prevButton.addEventListener('click', () => {
-            currentIndex = (currentIndex === 0) ? items.length - 1 : currentIndex - 1;
-            showItem(currentIndex);
-        });
-
-        nextButton.addEventListener('click', () => {
-            currentIndex = (currentIndex === items.length - 1) ? 0 : currentIndex + 1;
-            showItem(currentIndex);
-        });
-    </script>
+    // Scroll animation
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.2 };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer){
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('appear');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
 </body>
 </html>
