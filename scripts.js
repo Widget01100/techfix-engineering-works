@@ -34,6 +34,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+  // ===== Custom Spark Cursor =====
+  const customCursor = document.createElement('div');
+  customCursor.id = 'customCursor';
+  document.body.appendChild(customCursor);
+
+  document.addEventListener('mousemove', (e) => {
+    customCursor.style.transform = `translate3d(${e.clientX - 8}px, ${e.clientY - 8}px, 0)`;
+    customCursor.style.opacity = 1;
+  });
+
+  document.addEventListener('mouseleave', () => {
+    customCursor.style.opacity = 0;
+  });
+
   // ===== Image Carousel in Hero =====
   const carouselSlides = document.querySelectorAll('.carousel-slide');
   let currentSlide = 0;
@@ -152,6 +166,51 @@ document.addEventListener('DOMContentLoaded', function() {
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
   });
+
+  // ===== Animate Counters on Scroll =====
+  const counters = document.querySelectorAll('.count');
+  let countersStarted = false;
+  const countersObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !countersStarted) {
+        countersStarted = true;
+        counters.forEach(counter => {
+          const target = +counter.getAttribute('data-target');
+          let current = 0;
+          const step = Math.ceil(target / 120);
+          const update = () => {
+            current += step;
+            if (current > target) current = target;
+            counter.textContent = current;
+            if (current < target) {
+              requestAnimationFrame(update);
+            } else {
+              if (counter.textContent.endsWith('%') === false && counter.parentElement && counter.parentElement.tagName === 'H3' && counter.dataset.target === '99') {
+                counter.textContent = '99';
+              }
+            }
+          };
+          update();
+        });
+        obs.disconnect();
+      }
+    });
+  }, { threshold: 0.6 });
+  if (counters.length > 0) {
+    countersObserver.observe(document.querySelector('#home'));
+  }
+
+  // ===== Scroll Rumble for Heavy Sections =====
+  const rumbleSections = document.querySelectorAll('#capabilities, #portfolio');
+  const rumbleObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('rumble-effect');
+        setTimeout(() => entry.target.classList.remove('rumble-effect'), 450);
+      }
+    });
+  }, { threshold: 0.35 });
+  rumbleSections.forEach(section => rumbleObserver.observe(section));
 
   // ===== Add CSS Animations =====
   const style = document.createElement('style');

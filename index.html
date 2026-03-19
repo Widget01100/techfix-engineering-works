@@ -7,7 +7,7 @@
   <title>TechFix Engineering Works | Precision Lathe & Machine Shop | Nairobi</title>
 
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800&family=Rajdhani:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- SEO Meta Tags -->
@@ -53,15 +53,51 @@
 
   <!-- Hero Section -->
   <section class="hero" id="home">
+    <video class="hero-video" autoplay muted loop>
+      <source src="https://cdn.pixabay.com/vimeo/731690226/421cf63cd58a0f83eee4556fb8c84232.mp4" type="video/mp4">
+      <source src="media/videos/workshop-loop.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
     <div class="hero-content">
       <div class="hero-text">
-        <h1 class="hero-title">Precision Engineering Excellence</h1>
-        <p class="hero-subtitle">Premium lathe machining, fabrication, and industrial maintenance serving Kenya's most demanding industries.</p>
+        <h1 class="hero-title">Precision Engineering Done Right</h1>
+        <p class="hero-subtitle">A world-class workshop delivering high-volume lathe, welding and fabrication results at unmatched reliability.</p>
         <div class="hero-stats">
           <div class="stat">
-            <h3>25+</h3>
+            <h3><span class="count" data-target="25">0</span>+</h3>
             <p>Years Experience</p>
           </div>
+          <div class="stat">
+            <h3><span class="count" data-target="5000">0</span>+</h3>
+            <p>Projects Completed</p>
+          </div>
+          <div class="stat">
+            <h3><span class="count" data-target="99">0</span>%</h3>
+            <p>Client Retention</p>
+          </div>
+        </div>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">Request Quote</a>
+          <a href="#portfolio" class="btn btn-secondary">View Portfolio</a>
+        </div>
+        <div class="trust-badges">
+          <span><i class="fas fa-check-circle"></i> ISO 9001 Certified</span>
+          <span><i class="fas fa-check-circle"></i> Made in Kenya</span>
+          <span><i class="fas fa-check-circle"></i> 24/7 Industrial On-Call</span>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="image-carousel">
+          <img src="media/images/Lathe_works.jpg.jpg" alt="Precision lathe machining work" class="carousel-slide active">
+          <img src="media/images/Welding1.jpg.jpg" alt="Professional welding services" class="carousel-slide">
+          <img src="media/images/Custom_fabrication.jpg.jpg" alt="Custom fabrication work" class="carousel-slide">
+        </div>
+      </div>
+    </div>
+    <div class="gear-floating" id="gearFloating">
+      <img src="https://cdn-icons-png.flaticon.com/512/5006/5006722.png" alt="Rotating gear icon">
+    </div>
+  </section>
           <div class="stat">
             <h3>5000+</h3>
             <p>Projects Completed</p>
@@ -83,9 +119,9 @@
       </div>
       <div class="hero-image">
         <div class="image-carousel">
-          <img src="media/images/Lathe_works.jpg.jpg" alt="Precision lathe machining work" class="carousel-slide active">
-          <img src="media/images/Welding1.jpg.jpg" alt="Professional welding services" class="carousel-slide">
-          <img src="media/images/Custom_fabrication.jpg.jpg" alt="Custom fabrication work" class="carousel-slide">
+          <img src="https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1600&q=80" alt="Precision lathe machining work" class="carousel-slide active">
+          <img src="https://images.unsplash.com/photo-1581091870626-9fa7f2c42c4f?auto=format&fit=crop&w=1600&q=80" alt="Professional welding services" class="carousel-slide">
+          <img src="https://images.unsplash.com/photo-1602526218920-097e594d6de0?auto=format&fit=crop&w=1600&q=80" alt="Custom fabrication work" class="carousel-slide">
         </div>
       </div>
     </div>
@@ -176,6 +212,34 @@
             <li>Quality Control</li>
           </ul>
         </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-cubes"></i>
+          </div>
+          <h3>CNC Milling & Turning</h3>
+          <p>Advanced CNC milling and turning for complex geometry, tight tolerances and repeatable delivery.</p>
+          <ul class="features-list">
+            <li>Multi-Axis CNC Milling</li>
+            <li>Lathe + Mill Integration</li>
+            <li>Custom Fixtures</li>
+            <li>Batch Production</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-robot"></i>
+          </div>
+          <h3>Industry Automation & Robotics</h3>
+          <p>Automation system integration and robotic welding solutions to streamline production.</p>
+          <ul class="features-list">
+            <li>Robotic Welding Cells</li>
+            <li>PLC & HMI Programming</li>
+            <li>Conveyor Integration</li>
+            <li>Predictive Maintenance Systems</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -252,6 +316,30 @@
     </div>
   </section>
 
+  <!-- Process Flow Section -->
+  <section class="process-flow" id="process">
+    <div class="container">
+      <div class="section-header">
+        <h2>Process Flow - Built Like a Machine</h2>
+        <p>Each step is precision tuned into an automated workflow.</p>
+      </div>
+      <div class="certificate-badges">
+        <div class="badge-item"><i class="fas fa-certificate"></i><p>ISO 9001:2015 Certified</p></div>
+        <div class="badge-item"><i class="fas fa-shield-alt"></i><p>Safety & Quality First</p></div>
+        <div class="badge-item"><i class="fas fa-map-marker-alt"></i><p>Made in Nairobi</p></div>
+        <div class="badge-item"><i class="fas fa-award"></i><p>Kenya Industry Star 2025</p></div>
+      </div>
+      <div class="process-flow">
+        <div class="process-node"><h4>Consult</h4><p>We capture requirements with technical audits and 3D scans.</p></div>
+        <div class="process-node"><h4>Plan</h4><p>Engineering model workflow, cost estimation, and timeline setup.</p></div>
+        <div class="process-node"><h4>Execute</h4><p>Precision machining, welding, and fabrication with shop-grade equipment.</p></div>
+        <div class="process-node"><h4>QA</h4><p>Full inspection, metrology and NDT plus final tolerance check.</p></div>
+        <div class="process-node"><h4>Deliver</h4><p>Secure packaging, logistics coordination, and client handover.</p></div>
+        <div class="process-node"><h4>Support</h4><p>24/7 service support and predictive maintenance scheduling.</p></div>
+      </div>
+    </div>
+  </section>
+
   <!-- Portfolio Section -->
   <section class="portfolio" id="portfolio">
     <div class="container">
@@ -261,42 +349,42 @@
       </div>
       <div class="portfolio-grid">
         <div class="portfolio-item">
-          <img src="media/images/Lathe_works.jpg.jpg" alt="Precision lathe components">
+          <img src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=1600&q=80" alt="Precision lathe components">
           <div class="portfolio-overlay">
             <h3>Precision Components</h3>
             <p>Custom lathe work for industrial applications</p>
           </div>
         </div>
         <div class="portfolio-item">
-          <img src="media/images/Welding1.jpg.jpg" alt="Welding fabrication">
+          <img src="https://images.unsplash.com/photo-1581093448799-764b32c94f5c?auto=format&fit=crop&w=1600&q=80" alt="Welding fabrication">
           <div class="portfolio-overlay">
             <h3>Structural Fabrication</h3>
             <p>Expert welding and structural work</p>
           </div>
         </div>
         <div class="portfolio-item">
-          <img src="media/images/Crane_repair1.jpg.jpg" alt="Crane repair work">
+          <img src="https://images.unsplash.com/photo-1562184557-4f7309ce8f95?auto=format&fit=crop&w=1600&q=80" alt="Crane repair work">
           <div class="portfolio-overlay">
             <h3>Crane & Heavy Equipment</h3>
             <p>Repair and maintenance services</p>
           </div>
         </div>
         <div class="portfolio-item">
-          <img src="media/images/frame_straightening.jpg.jpg" alt="Frame straightening">
+          <img src="https://images.unsplash.com/photo-1579363635087-dcd1f31de399?auto=format&fit=crop&w=1600&q=80" alt="Frame straightening">
           <div class="portfolio-overlay">
             <h3>Frame Straightening</h3>
             <p>Precision alignment and restoration</p>
           </div>
         </div>
         <div class="portfolio-item">
-          <img src="media/images/Custom_fabrication.jpg.jpg" alt="Custom work">
+          <img src="https://images.unsplash.com/photo-1590086782790-8c2ec9ea3a40?auto=format&fit=crop&w=1600&q=80" alt="Custom work">
           <div class="portfolio-overlay">
             <h3>Custom Fabrication</h3>
             <p>Tailored solutions for unique needs</p>
           </div>
         </div>
         <div class="portfolio-item">
-          <img src="media/images/Press_works.jpg.jpg" alt="Press work">
+          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1600&q=80" alt="Press work">
           <div class="portfolio-overlay">
             <h3>Press Work</h3>
             <p>Heavy equipment fabrication and repair</p>
@@ -341,7 +429,7 @@
           <p>Whether you need precision components, structural fabrication, or emergency maintenance, TechFix is your trusted partner for industrial excellence.</p>
         </div>
         <div class="about-image">
-          <img src="media/images/Owner_Moffat _Shikuku.jpg.jpg" alt="TechFix Engineering Works facility">
+          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1600&q=80" alt="TechFix Engineering Works facility">
         </div>
       </div>
     </div>
@@ -393,13 +481,14 @@
             <input type="tel" placeholder="Phone Number" required>
           </div>
           <div class="form-group">
-            <select required>
+            <select required aria-label="Service Type">
               <option value="">Select Service Type</option>
               <option value="lathe">Lathe Machining</option>
               <option value="welding">Welding & Fabrication</option>
               <option value="maintenance">Industrial Maintenance</option>
               <option value="frame">Frame Straightening</option>
               <option value="custom">Custom Fabrication</option>
+              <option value="automation">Industrial Automation</option>
               <option value="other">Other</option>
             </select>
           </div>
