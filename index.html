@@ -3,99 +3,465 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TechFix Engineering Works | Precision. Performance. Perfection.</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>TechFix Engineering Works | Precision Lathe & Machine Shop | Nairobi</title>
 
   <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="TechFix Engineering Works provides expert engineering, fabrication, and machine maintenance services for industrial clients in Kenya and beyond. Precision. Performance. Perfection.">
-  <meta name="keywords" content="TechFix, Engineering, Fabrication, Machine Maintenance, Industrial Services, Kenya, Welding, Repair, Machining">
+  <meta name="description" content="TechFix Engineering Works - Premium precision lathe machining, fabrication, and industrial maintenance in Nairobi. 25+ years of expertise in CNC machining, welding, frame straightening, and custom fabrication.">
+  <meta name="keywords" content="lathe machine shop Nairobi, precision machining, CNC lathe, fabrication, welding, frame straightening, industrial maintenance, custom engineering, Kenya">
   <meta name="author" content="TechFix Engineering Works">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="TechFix Engineering Works | Precision. Performance. Perfection." />
-  <meta property="og:description" content="Expert engineering, fabrication, and maintenance services for industrial excellence." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="TechFix Engineering Works | Premium Precision Lathe & Machine Shop" />
+  <meta property="og:description" content="Expert precision machining, fabrication, and industrial engineering services. 25+ years delivering excellence." />
   <meta property="og:image" content="https://widget01100.github.io/techfix-engineering-works/media/images/Lathe_works.jpg" />
   <meta property="og:url" content="https://widget01100.github.io/techfix-engineering-works/" />
-  <meta property="og:type" content="website" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="media/images/favicon.png" />
-
-  <!-- Robots -->
-  <meta name="robots" content="index, follow" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='50' font-size='50' fill='%231a1a1a' text-anchor='middle' dominant-baseline='middle'%3E⚙%3C/text%3E%3C/svg%3E" />
 </head>
 
 <body>
   <!-- Navigation -->
-  <nav class="navbar">
-    <a href="index.html" class="active">Home</a>
-    <a href="services.html">Services</a>
-    <a href="About.html">About</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="contact.html">Contact</a>
+  <nav class="navbar" id="mainNav">
+    <div class="nav-container">
+      <div class="logo">
+        <i class="fas fa-cog"></i>
+        <span>TechFix</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#capabilities" class="nav-link">Capabilities</a></li>
+        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link cta-button">Get Quote</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero">
-    <div class="overlay">
-      <h1>Welcome to TECHFIX ENGINEERING WORKS</h1>
-      <p>Precision. Performance. Perfection.</p>
-      <a href="services.html" class="btn-primary">Explore Our Services</a>
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">Precision Engineering Excellence</h1>
+        <p class="hero-subtitle">Premium lathe machining, fabrication, and industrial maintenance serving Kenya's most demanding industries.</p>
+        <div class="hero-stats">
+          <div class="stat">
+            <h3>25+</h3>
+            <p>Years Experience</p>
+          </div>
+          <div class="stat">
+            <h3>5000+</h3>
+            <p>Projects Completed</p>
+          </div>
+          <div class="stat">
+            <h3>ISO</h3>
+            <p>Certified Shop</p>
+          </div>
+        </div>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">Request Quote</a>
+          <a href="#portfolio" class="btn btn-secondary">View Portfolio</a>
+        </div>
+        <div class="trust-badges">
+          <span><i class="fas fa-check-circle"></i> Expert Craftsmen</span>
+          <span><i class="fas fa-check-circle"></i> Premium Quality</span>
+          <span><i class="fas fa-check-circle"></i> On-Time Delivery</span>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="image-carousel">
+          <img src="media/images/Lathe_works.jpg.jpg" alt="Precision lathe machining work" class="carousel-slide active">
+          <img src="media/images/Welding1.jpg.jpg" alt="Professional welding services" class="carousel-slide">
+          <img src="media/images/Custom_fabrication.jpg.jpg" alt="Custom fabrication work" class="carousel-slide">
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- About Preview -->
-  <section class="about-preview fade-in">
-    <h2>About Us</h2>
-    <p>
-      At TECHFIX ENGINEERING WORKS, we combine craftsmanship and technology
-      to deliver precision fabrication, machining, and technical maintenance
-      across Kenya. We guarantee performance and reliability in every project.
-    </p>
-    <a href="About.html" class="btn-secondary">Learn More</a>
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Core Services</h2>
+        <p>Comprehensive precision engineering solutions for every industrial need</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-cog"></i>
+          </div>
+          <h3>Precision Lathe Machining</h3>
+          <p>CNC and manual lathe work for custom shafts, sleeves, bushings, and precision components.</p>
+          <ul class="features-list">
+            <li>CNC Turning</li>
+            <li>Manual Machining</li>
+            <li>Threading</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-fire"></i>
+          </div>
+          <h3>Welding & Fabrication</h3>
+          <p>Expert MIG, SMAW, and TIG welding for structural fabrication and repairs.</p>
+          <ul class="features-list">
+            <li>MIG Welding</li>
+            <li>Metal Arc Welding</li>
+            <li>Structural Fabrication</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-wrench"></i>
+          </div>
+          <h3>Industrial Maintenance</h3>
+          <p>Preventive and corrective maintenance for industrial machinery and equipment.</p>
+          <ul class="features-list">
+            <li>Equipment Repair</li>
+            <li>Preventive Maintenance</li>
+            <li>24/7 Support</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-hammer"></i>
+          </div>
+          <h3>Frame & Shock Straightening</h3>
+          <p>Professional straightening and restoration of vehicle frames and suspension components.</p>
+          <ul class="features-list">
+            <li>Frame Alignment</li>
+            <li>Shock Straightening</li>
+            <li>Suspension Work</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3>Custom Fabrication</h3>
+          <p>Bespoke engineering solutions tailored to your specific requirements.</p>
+          <ul class="features-list">
+            <li>Custom Parts</li>
+            <li>Engineering Design</li>
+            <li>Prototype Development</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-industry"></i>
+          </div>
+          <h3>Equipment Skimming</h3>
+          <p>Precision surface finishing and skimming services for machinery components.</p>
+          <ul class="features-list">
+            <li>Surface Finishing</li>
+            <li>Precision Grinding</li>
+            <li>Quality Control</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- Carousel / Slider -->
-  <section class="carousel fade-in">
-    <div class="slides">
-      <img src="media/images/Lathe_works.jpg" alt="Lathe Work" />
-      <img src="media/images/Welding1.jpg" alt="Welding" />
-      <img src="media/images/Crane_repair1.jpg" alt="Crane Repair" />
-      <img src="media/images/Customization.jpg" alt="Customization Work" />
+  <!-- Capabilities Section -->
+  <section class="capabilities" id="capabilities">
+    <div class="container">
+      <div class="section-header">
+        <h2>Technical Capabilities</h2>
+        <p>State-of-the-art equipment and expertise for precision manufacturing</p>
+      </div>
+      <div class="capabilities-grid">
+        <div class="capability-item">
+          <i class="fas fa-check"></i>
+          <h4>Modern CNC Equipment</h4>
+          <p>Latest lathe and milling machines for precision work</p>
+        </div>
+        <div class="capability-item">
+          <i class="fas fa-check"></i>
+          <h4>Expert Technicians</h4>
+          <p>Highly trained engineers with 20+ years experience</p>
+        </div>
+        <div class="capability-item">
+          <i class="fas fa-check"></i>
+          <h4>Quality Assurance</h4>
+          <p>Rigorous testing and inspection protocols</p>
+        </div>
+        <div class="capability-item">
+          <i class="fas fa-check"></i>
+          <h4>Fast Turnaround</h4>
+          <p>Quick production with consistent quality</p>
+        </div>
+        <div class="capability-item">
+          <i class="fas fa-check"></i>
+          <h4>Competitive Pricing</h4>
+          <p>Premium quality at fair market rates</p>
+        </div>
+        <div class="capability-item">
+          <i class="fas fa-check"></i>
+          <h4>24/7 Emergency Support</h4>
+          <p>Always available when you need us</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2>What Clients Say</h2>
+        <p>High-value clients rely on TechFix for demanding industrial work.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <p>"TechFix delivered precision parts faster than expected and the quality exceeded our strict marine standards. Their engineering team is world class."</p>
+          <h4>James Ndungu</h4>
+          <span>Operations Manager, Titan Industries</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <p>"The frame straightening and welding repair saved our fleet downtime. Their attention to detail and communication were exceptional."</p>
+          <h4>Grace Wambui</h4>
+          <span>Fleet Supervisor, Nairobi Logistics</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <p>"From initial consulting to delivery, TechFix was professional, on-time, and above industry standard. This is true premium engineering."</p>
+          <h4>Owen Kariuki</h4>
+          <span>Engineering Lead, SilverMachine Ltd.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <h2>Featured Projects</h2>
+        <p>Excellence demonstrated through our portfolio of precision work</p>
+      </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="media/images/Lathe_works.jpg.jpg" alt="Precision lathe components">
+          <div class="portfolio-overlay">
+            <h3>Precision Components</h3>
+            <p>Custom lathe work for industrial applications</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="media/images/Welding1.jpg.jpg" alt="Welding fabrication">
+          <div class="portfolio-overlay">
+            <h3>Structural Fabrication</h3>
+            <p>Expert welding and structural work</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="media/images/Crane_repair1.jpg.jpg" alt="Crane repair work">
+          <div class="portfolio-overlay">
+            <h3>Crane & Heavy Equipment</h3>
+            <p>Repair and maintenance services</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="media/images/frame_straightening.jpg.jpg" alt="Frame straightening">
+          <div class="portfolio-overlay">
+            <h3>Frame Straightening</h3>
+            <p>Precision alignment and restoration</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="media/images/Custom_fabrication.jpg.jpg" alt="Custom work">
+          <div class="portfolio-overlay">
+            <h3>Custom Fabrication</h3>
+            <p>Tailored solutions for unique needs</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="media/images/Press_works.jpg.jpg" alt="Press work">
+          <div class="portfolio-overlay">
+            <h3>Press Work</h3>
+            <p>Heavy equipment fabrication and repair</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>About TechFix Engineering Works</h2>
+          <p>TechFix Engineering Works has been serving Kenya's industrial sector since 1998 with uncompromising commitment to precision and excellence. Our state-of-the-art facility in Nairobi is equipped with modern machinery and staffed by highly skilled technicians.</p>
+          
+          <div class="about-list">
+            <div class="list-item">
+              <i class="fas fa-star"></i>
+              <div>
+                <h4>25+ Years of Excellence</h4>
+                <p>Proven track record of delivering quality engineering solutions</p>
+              </div>
+            </div>
+            <div class="list-item">
+              <i class="fas fa-award"></i>
+              <div>
+                <h4>Industry Certified</h4>
+                <p>Meets international standards for quality and safety</p>
+              </div>
+            </div>
+            <div class="list-item">
+              <i class="fas fa-handshake"></i>
+              <div>
+                <h4>Client Focused</h4>
+                <p>Building long-term partnerships with every customer</p>
+              </div>
+            </div>
+          </div>
+
+          <p>Whether you need precision components, structural fabrication, or emergency maintenance, TechFix is your trusted partner for industrial excellence.</p>
+        </div>
+        <div class="about-image">
+          <img src="media/images/Owner_Moffat _Shikuku.jpg.jpg" alt="TechFix Engineering Works facility">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2>Get In Touch</h2>
+        <p>Ready to discuss your project? Contact us today for a free consultation.</p>
+      </div>
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="info-item">
+            <i class="fas fa-phone"></i>
+            <h3>Call Us</h3>
+            <p>
+              <a href="tel:+254740248472">+254 740 248 472</a><br>
+              <a href="tel:+254797644577">+254 797 644 577</a>
+            </p>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <h3>Email Us</h3>
+            <p>
+              <a href="mailto:techfixengineering@gmail.com">techfixengineering@gmail.com</a>
+            </p>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Visit Us</h3>
+            <p>Hawkers Market<br>Kibera Drive<br>Nairobi, Kenya</p>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-clock"></i>
+            <h3>Business Hours</h3>
+            <p>Mon-Fri: 7:00 AM - 6:00 PM<br>Sat: 8:00 AM - 4:00 PM<br>Emergency: 24/7</p>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <input type="text" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Your Email" required>
+          </div>
+          <div class="form-group">
+            <input type="tel" placeholder="Phone Number" required>
+          </div>
+          <div class="form-group">
+            <select required>
+              <option value="">Select Service Type</option>
+              <option value="lathe">Lathe Machining</option>
+              <option value="welding">Welding & Fabrication</option>
+              <option value="maintenance">Industrial Maintenance</option>
+              <option value="frame">Frame Straightening</option>
+              <option value="custom">Custom Fabrication</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <textarea placeholder="Project Details" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Request Quote</button>
+        </form>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer id="contact">
-    <h2>Contact Us</h2>
-    <ul>
-      <li>Email: techfixengineering@gmail.com</li>
-      <li>Phone: +254740248472 / +254797644577</li>
-      <li>Location: Hawkers Market, Kibera Drive, Nairobi</li>
-    </ul>
-    <p>&copy; 2025 TECHFIX ENGINEERING WORKS. All rights reserved.</p>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3>TechFix Engineering</h3>
+          <p>Premium precision engineering and fabrication services for Kenya's industrial sector.</p>
+          <div class="social-links">
+            <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="#services">Lathe Machining</a></li>
+            <li><a href="#services">Welding</a></li>
+            <li><a href="#services">Fabrication</a></li>
+            <li><a href="#services">Maintenance</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Info</h3>
+          <p>
+            <strong>Phone:</strong><br>
+            <a href="tel:+254740248472">+254 740 248 472</a>
+          </p>
+          <p>
+            <strong>Email:</strong><br>
+            <a href="mailto:techfixengineering@gmail.com">techfixengineering@gmail.com</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 TechFix Engineering Works. All rights reserved. | <a href="#">Privacy Policy</a></p>
+      </div>
+    </div>
   </footer>
 
-  <!-- Scripts -->
-  <script>
-    let currentIndex = 0;
-    const items = document.querySelectorAll('.slides img');
-    const totalItems = items.length;
-
-    function showItem(index) {
-      items.forEach((item, i) => {
-        item.style.display = i === index ? 'block' : 'none';
-      });
-    }
-
-    function nextItem() {
-      currentIndex = (currentIndex + 1) % totalItems;
-      showItem(currentIndex);
-    }
-
-    showItem(currentIndex);
-    setInterval(nextItem, 4000);
-  </script>
+  <script src="scripts.js"></script>
 </body>
 </html>
