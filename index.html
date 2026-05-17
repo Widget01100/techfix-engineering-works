@@ -23,9 +23,6 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.css" rel="stylesheet" type="text/css" />
   
-  <!-- Flowbite -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
-  
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
@@ -35,26 +32,21 @@
   <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   
-  <!-- Animate.css -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-  
   <!-- Swiper -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   
   <style>
-    /* Custom Engineering Styles - Clean & Elegant */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
     :root {
-      --primary: #0f172a;
-      --secondary: #1e293b;
-      --accent: #ef4444;
-      --accent-light: #f87171;
-      --accent-dark: #dc2626;
-      --text-primary: #f8fafc;
+      --primary: #0a0f1a;
+      --secondary: #141a2a;
+      --accent: #e74c3c;
+      --accent-light: #ff6b5b;
+      --accent-dark: #c0392b;
+      --text-primary: #ffffff;
       --text-secondary: #94a3b8;
-      --card-bg: rgba(30, 41, 59, 0.7);
-      --border-glow: rgba(239, 68, 68, 0.3);
+      --card-bg: rgba(20, 26, 42, 0.6);
     }
     
     [data-theme="light"] {
@@ -67,31 +59,23 @@
     
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      background: var(--primary);
       color: var(--text-primary);
       transition: all 0.3s ease;
     }
     
     html { scroll-behavior: smooth; scroll-padding-top: 80px; }
     
-    /* Custom Scrollbar - Elegant */
+    /* Custom Scrollbar */
     ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: var(--secondary); border-radius: 10px; }
+    ::-webkit-scrollbar-track { background: var(--secondary); }
     ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
     
-    /* Glass Card Effect */
-    .glass-card {
-      background: var(--card-bg);
+    /* Glass Effect */
+    .glass {
+      background: rgba(20, 26, 42, 0.5);
       backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 24px;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .glass-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--accent);
-      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
     
     /* Gradient Text */
@@ -102,123 +86,143 @@
       color: transparent;
     }
     
-    /* Gradient Border */
-    .gradient-border {
-      position: relative;
-      background: var(--card-bg);
-      border-radius: 24px;
+    /* Service Category Card */
+    .service-category {
+      background: linear-gradient(135deg, rgba(20, 26, 42, 0.8), rgba(10, 15, 26, 0.6));
+      border-radius: 32px;
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+      border: 1px solid rgba(231, 76, 60, 0.15);
+      transition: all 0.3s ease;
     }
     
-    .gradient-border::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 24px;
-      padding: 1px;
-      background: linear-gradient(135deg, var(--accent), transparent);
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events: none;
+    .service-category:hover {
+      border-color: rgba(231, 76, 60, 0.4);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
     }
     
-    /* Animated Background */
-    .animated-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      overflow: hidden;
+    .service-category-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid rgba(231, 76, 60, 0.3);
     }
     
-    .animated-bg div {
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
-      border-radius: 50%;
-      opacity: 0.05;
-      animation: float 20s infinite ease-in-out;
-    }
-    
-    @keyframes float {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      25% { transform: translate(100px, 50px) scale(1.1); }
-      50% { transform: translate(50px, 100px) scale(0.9); }
-      75% { transform: translate(-50px, 50px) scale(1.05); }
-    }
-    
-    /* Service Card Styles */
-    .service-card-modern {
-      background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.6));
-      backdrop-filter: blur(12px);
-      border-radius: 28px;
-      padding: 1.75rem;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      border: 1px solid rgba(239, 68, 68, 0.1);
-      cursor: pointer;
-    }
-    
-    .service-card-modern:hover {
-      transform: translateY(-8px);
-      border-color: var(--accent);
-      box-shadow: 0 25px 40px -12px rgba(239, 68, 68, 0.25);
-    }
-    
-    .service-icon-modern {
-      width: 56px;
-      height: 56px;
+    .service-category-icon {
+      width: 48px;
+      height: 48px;
       background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-      border-radius: 18px;
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 1.25rem;
     }
     
-    .service-icon-modern i {
-      font-size: 1.75rem;
+    .service-category-icon i {
+      font-size: 1.5rem;
       color: white;
+    }
+    
+    .service-category-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      font-family: 'Space Grotesk', monospace;
+    }
+    
+    .service-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    
+    .service-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+    
+    .service-item:hover {
+      background: rgba(231, 76, 60, 0.08);
+      transform: translateX(8px);
+    }
+    
+    .service-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+    
+    .service-content {
+      flex: 1;
+    }
+    
+    .service-name {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    
+    .service-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    
+    .service-tag {
+      font-size: 0.7rem;
+      padding: 3px 10px;
+      background: rgba(231, 76, 60, 0.15);
+      border-radius: 20px;
+      color: var(--accent-light);
     }
     
     /* Stat Card */
-    .stat-card-modern {
-      background: linear-gradient(135deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.4));
+    .stat-card {
+      background: rgba(20, 26, 42, 0.5);
       backdrop-filter: blur(8px);
       border-radius: 20px;
       padding: 1.5rem;
       text-align: center;
       transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.05);
     }
     
-    .stat-card-modern:hover {
+    .stat-card:hover {
       transform: translateY(-4px);
-      background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(30, 41, 59, 0.6));
+      border-color: var(--accent);
     }
     
     /* Process Step */
-    .process-step-modern {
+    .process-step {
       text-align: center;
       padding: 1.5rem;
-      background: linear-gradient(135deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.4));
+      background: rgba(20, 26, 42, 0.4);
       backdrop-filter: blur(8px);
       border-radius: 24px;
       transition: all 0.3s ease;
     }
     
-    .process-step-modern:hover {
+    .process-step:hover {
       transform: translateY(-4px);
-      background: linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(30, 41, 59, 0.6));
+      background: rgba(231, 76, 60, 0.1);
     }
     
-    /* Floating Action Button */
-    .fab {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
+    .step-number {
       width: 56px;
       height: 56px;
       background: linear-gradient(135deg, var(--accent), var(--accent-dark));
@@ -226,37 +230,29 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
+      margin: 0 auto 1rem;
       font-size: 1.5rem;
-      box-shadow: 0 8px 20px rgba(239, 68, 68, 0.4);
-      transition: all 0.3s ease;
-      z-index: 100;
-      cursor: pointer;
+      font-weight: 700;
     }
     
-    .fab:hover {
-      transform: scale(1.1);
-      box-shadow: 0 12px 28px rgba(239, 68, 68, 0.6);
-    }
-    
-    /* Navbar */
-    .navbar-modern {
-      background: rgba(15, 23, 42, 0.9);
+    /* Navigation */
+    .navbar {
+      background: rgba(10, 15, 26, 0.95);
       backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
     
     .navbar-scrolled {
-      background: rgba(15, 23, 42, 0.98);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      background: rgba(10, 15, 26, 0.98);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     }
     
     /* Theme Toggle */
-    .theme-toggle-btn {
+    .theme-btn {
       width: 40px;
       height: 40px;
       border-radius: 20px;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.08);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -264,7 +260,7 @@
       transition: all 0.3s ease;
     }
     
-    .theme-toggle-btn:hover {
+    .theme-btn:hover {
       background: var(--accent);
       transform: rotate(15deg);
     }
@@ -277,39 +273,133 @@
         left: -100%;
         width: 100%;
         height: calc(100vh - 70px);
-        background: rgba(15, 23, 42, 0.98);
+        background: rgba(10, 15, 26, 0.98);
         backdrop-filter: blur(20px);
         transition: left 0.3s ease;
         z-index: 999;
       }
       .mobile-menu.active { left: 0; }
+      
+      .service-category {
+        padding: 1.25rem;
+      }
+      
+      .service-category-title {
+        font-size: 1.25rem;
+      }
     }
     
-    /* Filter Buttons */
-    .filter-btn-modern {
-      padding: 8px 24px;
-      border-radius: 40px;
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--text-secondary);
-      transition: all 0.3s ease;
+    /* Portfolio Item */
+    .portfolio-item {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
       cursor: pointer;
     }
     
-    .filter-btn-modern:hover, .filter-btn-modern.active {
-      background: var(--accent);
+    .portfolio-item img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .portfolio-item:hover img {
+      transform: scale(1.08);
+    }
+    
+    .portfolio-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+      padding: 1.5rem;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    
+    .portfolio-item:hover .portfolio-overlay {
+      transform: translateY(0);
+    }
+    
+    /* WhatsApp Float */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 56px;
+      height: 56px;
+      background: #25D366;
+      border-radius: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
       color: white;
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+      transition: all 0.3s ease;
+      z-index: 100;
     }
     
-    /* Loading Animation */
-    @keyframes shimmer {
-      0% { background-position: -1000px 0; }
-      100% { background-position: 1000px 0; }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 28px rgba(37, 211, 102, 0.6);
     }
     
-    .loading {
-      background: linear-gradient(90deg, var(--secondary) 25%, var(--primary) 50%, var(--secondary) 75%);
-      background-size: 1000px 100%;
-      animation: shimmer 2s infinite;
+    /* Scroll to top */
+    .scroll-top {
+      position: fixed;
+      bottom: 24px;
+      right: 100px;
+      width: 48px;
+      height: 48px;
+      background: var(--accent);
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      cursor: pointer;
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 100;
+    }
+    
+    .scroll-top.visible {
+      opacity: 1;
+    }
+    
+    .scroll-top:hover {
+      transform: translateY(-4px);
+    }
+    
+    /* Animated background */
+    .animated-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+    
+    .animated-bg div {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+      border-radius: 50%;
+      opacity: 0.04;
+      animation: float 25s infinite ease-in-out;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      25% { transform: translate(150px, 80px) scale(1.1); }
+      50% { transform: translate(80px, 150px) scale(0.9); }
+      75% { transform: translate(-80px, 80px) scale(1.05); }
     }
   </style>
 </head>
@@ -318,14 +408,14 @@
 <!-- Animated Background -->
 <div class="animated-bg">
   <div style="top: 10%; left: -5%; animation-delay: 0s;"></div>
-  <div style="bottom: 20%; right: -5%; animation-delay: 5s; width: 400px; height: 400px;"></div>
-  <div style="top: 50%; left: 30%; animation-delay: 10s; width: 200px; height: 200px;"></div>
-  <div style="bottom: 10%; left: 60%; animation-delay: 15s; width: 250px; height: 250px;"></div>
+  <div style="bottom: 20%; right: -5%; animation-delay: 5s; width: 500px; height: 500px;"></div>
+  <div style="top: 50%; left: 30%; animation-delay: 10s; width: 300px; height: 300px;"></div>
+  <div style="bottom: 10%; left: 60%; animation-delay: 15s;"></div>
 </div>
 
 <!-- Navigation -->
-<nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 navbar-modern" id="navbar">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 navbar" id="navbar">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-20">
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 bg-gradient-to-br from-red-500 to-red-700 rounded-xl flex items-center justify-center">
@@ -339,11 +429,11 @@
         <a href="#portfolio" class="hover:text-red-500 transition duration-300">Portfolio</a>
         <a href="#process" class="hover:text-red-500 transition duration-300">Process</a>
         <a href="#about" class="hover:text-red-500 transition duration-300">About</a>
-        <a href="#contact" class="bg-red-500 px-5 py-2 rounded-full hover:bg-red-600 transition duration-300 shadow-lg shadow-red-500/25">Get Quote</a>
+        <a href="#contact" class="bg-red-500 px-5 py-2 rounded-full hover:bg-red-600 transition shadow-lg shadow-red-500/25">Get Quote</a>
       </div>
       <div class="flex items-center gap-3">
-        <div class="theme-toggle-btn" id="themeToggle">
-          <i class="fas fa-moon text-white"></i>
+        <div class="theme-btn" id="themeToggle">
+          <i class="fas fa-moon text-white text-lg"></i>
         </div>
         <button class="md:hidden text-2xl" id="menuToggle">
           <i class="fas fa-bars"></i>
@@ -365,8 +455,8 @@
 
 <!-- Hero Section -->
 <section id="home" class="min-h-screen flex items-center pt-20">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
       <div data-aos="fade-up" data-aos-duration="800">
         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 mb-6">
           <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
@@ -387,41 +477,29 @@
             Explore Services
           </a>
         </div>
-        <div class="grid grid-cols-3 gap-6 pt-6 border-t border-white/10">
-          <div class="stat-card-modern">
+        <div class="grid grid-cols-3 gap-6">
+          <div class="stat-card">
             <div class="text-3xl font-bold text-red-500" id="yearsCount">0</div>
             <div class="text-sm text-gray-400 mt-1">Years Experience</div>
           </div>
-          <div class="stat-card-modern">
+          <div class="stat-card">
             <div class="text-3xl font-bold text-red-500" id="projectsCount">0</div>
             <div class="text-sm text-gray-400 mt-1">Projects Completed</div>
           </div>
-          <div class="stat-card-modern">
+          <div class="stat-card">
             <div class="text-3xl font-bold text-red-500" id="clientsCount">0</div>
             <div class="text-sm text-gray-400 mt-1">Happy Clients</div>
           </div>
         </div>
       </div>
       <div data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
-        <div class="glass-card p-8 text-center">
-          <div class="relative">
-            <div class="absolute inset-0 bg-gradient-to-r from-red-500 to-red-600 rounded-2xl blur-2xl opacity-30"></div>
-            <div class="relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-8">
-              <i class="fas fa-cog fa-spin text-6xl text-red-500 mb-4"></i>
-              <h3 class="text-2xl font-bold mb-2">Fully Equipped Workshop</h3>
-              <p class="text-gray-400">CNC • Lathe • Welding • Fabrication • Press • Crane</p>
-              <div class="flex justify-center gap-4 mt-6">
-                <div class="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center">
-                  <i class="fas fa-check text-red-500 text-sm"></i>
-                </div>
-                <div class="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center">
-                  <i class="fas fa-check text-red-500 text-sm"></i>
-                </div>
-                <div class="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center">
-                  <i class="fas fa-check text-red-500 text-sm"></i>
-                </div>
-              </div>
-            </div>
+        <div class="glass rounded-3xl p-8 text-center">
+          <i class="fas fa-cog fa-spin text-6xl text-red-500 mb-6"></i>
+          <h3 class="text-2xl font-bold mb-3">Fully Equipped Workshop</h3>
+          <p class="text-gray-400">CNC • Lathe • Welding • Fabrication • Press • Crane</p>
+          <div class="flex justify-center gap-3 mt-6">
+            <span class="px-3 py-1 bg-red-500/20 rounded-full text-sm">24/7 Support</span>
+            <span class="px-3 py-1 bg-red-500/20 rounded-full text-sm">ISO Quality</span>
           </div>
         </div>
       </div>
@@ -429,9 +507,9 @@
   </div>
 </section>
 
-<!-- Services Section -->
+<!-- Services Section - Clean List Layout -->
 <section id="services" class="py-24">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16" data-aos="fade-up">
       <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 mb-4">
         <i class="fas fa-tools text-red-400 text-sm"></i>
@@ -443,62 +521,58 @@
       <p class="text-gray-400 max-w-2xl mx-auto">Comprehensive precision solutions under one roof</p>
     </div>
     
-    <div class="flex flex-wrap justify-center gap-3 mb-12" data-aos="fade-up" data-aos-delay="100">
-      <button class="filter-btn-modern active" data-filter="all">All Services</button>
-      <button class="filter-btn-modern" data-filter="lathe">Lathe & CNC</button>
-      <button class="filter-btn-modern" data-filter="weld">Welding & Fabrication</button>
-      <button class="filter-btn-modern" data-filter="precision">Precision Engineering</button>
-      <button class="filter-btn-modern" data-filter="industrial">Industrial & Heavy</button>
+    <!-- Category 1: Lathe & CNC Works -->
+    <div class="service-category" data-aos="fade-up" data-aos-delay="0">
+      <div class="service-category-header">
+        <div class="service-category-icon"><i class="fas fa-cog"></i></div>
+        <h3 class="service-category-title">Lathe & CNC Works</h3>
+      </div>
+      <div class="service-list">
+        <div class="service-item"><div class="service-dot"></div><div class="service-content"><div class="service-name">Lathe Works</div><div class="service-desc">Turning, boring, threading, taper turning, knurling, grooving, drilling on lathe, reaming, countersinking, facing, eccentric turning, polygon turning, multi-start threading</div><div class="service-tags"><span class="service-tag">Precision</span><span class="service-tag">All Materials</span></div></div></div>
+        <div class="service-item"><div class="service-dot"></div><div class="service-content"><div class="service-name">CNC Services</div><div class="service-desc">CNC turning, CNC milling, 3-axis & 4-axis machining, precision batch production, CAD/CAM integration, complex geometry machining</div><div class="service-tags"><span class="service-tag">High Accuracy</span><span class="service-tag">Repeatability</span></div></div></div>
+        <div class="service-item"><div class="service-dot"></div><div class="service-content"><div class="service-name">Drill Works</div><div class="service-desc">All materials: mild steel, stainless, aluminum, cast iron, brass, bronze, titanium, plastics — precision hole drilling, deep hole drilling, countersinking, tapping</div><div class="service-tags"><span class="service-tag">Any Material</span><span class="service-tag">Precision Holes</span></div></div></div>
+      </div>
     </div>
     
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="servicesGrid"></div>
-  </div>
-</section>
-
-<!-- Quote Calculator Section -->
-<section class="py-16">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="glass-card p-8 md:p-10" data-aos="zoom-in">
-      <div class="text-center mb-8">
-        <i class="fas fa-calculator text-4xl text-red-500 mb-3"></i>
-        <h3 class="text-2xl md:text-3xl font-bold">Instant Quote Estimator</h3>
-        <p class="text-gray-400 mt-2">Get an estimated price for your project in seconds</p>
+    <!-- Category 2: Welding & Fabrication -->
+    <div class="service-category" data-aos="fade-up" data-aos-delay="100">
+      <div class="service-category-header">
+        <div class="service-category-icon"><i class="fas fa-fire"></i></div>
+        <h3 class="service-category-title">Welding & Fabrication</h3>
       </div>
-      <div class="grid md:grid-cols-3 gap-6 mb-8">
-        <div>
-          <label class="block text-sm text-gray-400 mb-2">Service Type</label>
-          <select id="calcService" class="w-full px-4 py-3 rounded-xl bg-gray-800/50 border border-gray-700 text-white focus:border-red-500 focus:outline-none transition">
-            <option value="lathe">Lathe Works</option>
-            <option value="cnc">CNC Machining</option>
-            <option value="welding">Welding & Fabrication</option>
-            <option value="skimming">Skimming</option>
-            <option value="sleeving">Sleeving/Rethreading</option>
-            <option value="gym">Gym Equipment</option>
-          </select>
-        </div>
-        <div>
-          <label class="block text-sm text-gray-400 mb-2">Material Type</label>
-          <select id="calcMaterial" class="w-full px-4 py-3 rounded-xl bg-gray-800/50 border border-gray-700 text-white focus:border-red-500 focus:outline-none transition">
-            <option value="mild">Mild Steel</option>
-            <option value="stainless">Stainless Steel (+30%)</option>
-            <option value="aluminum">Aluminum (+20%)</option>
-            <option value="cast">Cast Iron (+25%)</option>
-          </select>
-        </div>
-        <div>
-          <label class="block text-sm text-gray-400 mb-2">Turnaround Time</label>
-          <select id="calcUrgency" class="w-full px-4 py-3 rounded-xl bg-gray-800/50 border border-gray-700 text-white focus:border-red-500 focus:outline-none transition">
-            <option value="normal">Normal (5-7 days)</option>
-            <option value="express">Express (+50%)</option>
-            <option value="emergency">Emergency (+100%)</option>
-          </select>
-        </div>
+      <div class="service-list">
+        <div class="service-item"><div class="service-dot"></div><div class="service-content"><div class="service-name">All Welding Types</div><div class="service-desc">MIG, TIG, SMAW (arc) welding — aluminum, stainless steel, mild steel, cast iron, bronze, brass. Structural fabrication, custom metalwork, repairs</div><div class="service-tags"><span class="service-tag">MIG/TIG/Arc</span><span class="service-tag">All Metals</span></div></div></div>
+        <div class="service-item"><div class="service-dot"></div><div class="service-content"><div class="service-name">Vehicle & Motorcycle Rim Welding</div><div class="service-desc">Cracked alloy/steel wheel repair, straightening, crack welding, structural reinforcement for cars and motorcycles</div><div class="service-tags"><span class="service-tag">Rims</span><span class="service-tag">Alloy/Steel</span></div></div></div>
+        <div class="service-item"><div class="service-dot"></div><div class="service-content"><div class="service-name">Motorcycle Bearing Sleeve Repair</div><div class="service-desc">When bearing housing widens on motorcycle wheels, we precision-fit a sleeve to restore factory bearing fit perfectly</div><div class="service-tags"><span class="service-tag">Sleeve Insertion</span><span class="service-tag">Restores Fit</span></div></div></div>
+        <div class="service-item"><div class="service-dot"></div><div class="service-content"><div class="service-name">Custom Fittings & Fabrications</div><div class="service-desc">Brackets, mounts, guards, exhaust modifications, chassis reinforcements, roll cages, tool attachments for machines, vehicles, and motorcycles</div><div class="service-tags"><span class="service-tag">Any Machine</span><span class="service-tag">Any Vehicle</span></div></div></div>
       </div>
-      <div class="text-center pt-6 border-t border-white/10">
-        <span class="text-4xl md:text-5xl font-bold text-red-500" id="estimatedPrice">KSh 0</span>
-        <button id="pdfQuoteBtn" class="ml-4 px-6 py-2 rounded-full bg-white/10 hover:bg-red-500 transition duration-300">
-          <i class="fas fa-download mr-2"></i>Save as PDF
-        </button>
+    </div>
+    
+    <!-- Category 3: Precision Engineering -->
+    <div class="service-category" data-aos="fade-up" data-aos-delay="200">
+      <div class="service-category-header">
+        <div class="service-category-icon"><i class="fas fa-microscope"></i></div>
+        <h3 class="service-category-title">Precision Engineering</h3>
+      </div>
+      <div class="service-list">
+        <div class="service-item"><div class="service-dot"></div><div class="service-content"><div class="service-name">Skimming Services</div><div class="service-desc">Brake discs (rotors), brake drums, flywheels, clutch pressure plates, cylinder heads, industrial flywheels</div><div class="service-tags"><span class="service-tag">Discs</span><span class="service-tag">Drums</span><span class="service-tag">Flywheels</span></div></div></div>
+        <div class="service-item"><div class="service-dot"></div><div class="service-content"><div class="service-name">Sleeving & Rethreading</div><div class="service-desc">Engine block sleeving, cylinder sleeving, bearing housing repair, thread restoration, Helicoil installation, oversized thread repair — vehicle engines, motorcycle engines, industrial machinery</div><div class="service-tags"><span class="service-tag">Engines</span><span class="service-tag">Anywhere</span></div></div></div>
+        <div class="service-item"><div class="service-dot"></div><div class="service-content"><div class="service-name">Press Works</div><div class="service-desc">Bush pressing, bearing pressing, gear pressing, shaft pressing, axle pressing — hydraulic press work up to 100 tons</div><div class="service-tags"><span class="service-tag">Bushes</span><span class="service-tag">Bearings</span><span class="service-tag">Gears</span></div></div></div>
+        <div class="service-item"><div class="service-dot"></div><div class="service-content"><div class="service-name">Coil Rewinding</div><div class="service-desc">Pump motors, industrial motors, alternators, starters, fan motors — copper winding, insulation, varnishing</div><div class="service-tags"><span class="service-tag">Motors</span><span class="service-tag">Pumps</span></div></div></div>
+        <div class="service-item"><div class="service-dot"></div><div class="service-content"><div class="service-name">Spring Leaf Tensioning</div><div class="service-desc">Leaf spring re-tensioning, re-arching, crack repair, bushing replacement for vehicles</div><div class="service-tags"><span class="service-tag">Re-tensioning</span><span class="service-tag">Re-arching</span></div></div></div>
+        <div class="service-item"><div class="service-dot"></div><div class="service-content"><div class="service-name">Pulley Making</div><div class="service-desc">Custom pulleys (V-belt, timing, flat belt), grooving, balancing, keyway cutting</div><div class="service-tags"><span class="service-tag">Custom</span><span class="service-tag">Balanced</span></div></div></div>
+      </div>
+    </div>
+    
+    <!-- Category 4: Industrial & Heavy Equipment -->
+    <div class="service-category" data-aos="fade-up" data-aos-delay="300">
+      <div class="service-category-header">
+        <div class="service-category-icon"><i class="fas fa-industry"></i></div>
+        <h3 class="service-category-title">Industrial & Heavy Equipment</h3>
+      </div>
+      <div class="service-list">
+        <div class="service-item"><div class="service-dot"></div><div class="service-content"><div class="service-name">Crane Repair & Modifications</div><div class="service-desc">Hydraulic cranes, overhead cranes, jib cranes — structural repair, hydraulic system overhaul, modifications, safety inspections</div><div class="service-tags"><span class="service-tag">Repair</span><span class="service-tag">Modification</span></div></div></div>
+        <div class="service-item"><div class="service-dot"></div><div class="service-content"><div class="service-name">Gym Equipment Fabrication</div><div class="service-desc">Weight plates (jua kali type), leg press machines, squat racks, bench press benches, dumbbells all sizes, barbells 4ft/5ft/6ft/7ft, weight racks, cable machines, pulley systems, custom gym rigs</div><div class="service-tags"><span class="service-tag">Custom</span><span class="service-tag">Heavy Duty</span></div></div></div>
       </div>
     </div>
   </div>
@@ -506,7 +580,7 @@
 
 <!-- Process Section -->
 <section id="process" class="py-24">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16" data-aos="fade-up">
       <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 mb-4">
         <i class="fas fa-chart-line text-red-400 text-sm"></i>
@@ -515,22 +589,22 @@
       <h2 class="text-4xl md:text-5xl font-bold font-['Space_Grotesk'] mb-4">
         Our <span class="gradient-text">Process</span>
       </h2>
-      <p class="text-gray-400 max-w-2xl mx-auto">Precision at every step</p>
+      <p class="text-gray-400 max-w-2xl mx-auto">Precision at every step — from consultation to delivery</p>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-      <div class="process-step-modern" data-aos="fade-up" data-aos-delay="0"><div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-3">1</div><h3 class="font-bold">Consult</h3><p class="text-sm text-gray-400">Understand needs</p></div>
-      <div class="process-step-modern" data-aos="fade-up" data-aos-delay="100"><div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-3">2</div><h3 class="font-bold">Plan</h3><p class="text-sm text-gray-400">CAD/CAM design</p></div>
-      <div class="process-step-modern" data-aos="fade-up" data-aos-delay="200"><div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-3">3</div><h3 class="font-bold">Execute</h3><p class="text-sm text-gray-400">Precision work</p></div>
-      <div class="process-step-modern" data-aos="fade-up" data-aos-delay="300"><div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-3">4</div><h3 class="font-bold">Quality</h3><p class="text-sm text-gray-400">Inspection</p></div>
-      <div class="process-step-modern" data-aos="fade-up" data-aos-delay="400"><div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-3">5</div><h3 class="font-bold">Deliver</h3><p class="text-sm text-gray-400">On-time</p></div>
-      <div class="process-step-modern" data-aos="fade-up" data-aos-delay="500"><div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-3">6</div><h3 class="font-bold">Support</h3><p class="text-sm text-gray-400">24/7</p></div>
+      <div class="process-step" data-aos="fade-up" data-aos-delay="0"><div class="step-number">1</div><h3 class="font-bold">Consult</h3><p class="text-sm text-gray-400">Understand requirements</p></div>
+      <div class="process-step" data-aos="fade-up" data-aos-delay="100"><div class="step-number">2</div><h3 class="font-bold">Plan</h3><p class="text-sm text-gray-400">CAD/CAM design</p></div>
+      <div class="process-step" data-aos="fade-up" data-aos-delay="200"><div class="step-number">3</div><h3 class="font-bold">Execute</h3><p class="text-sm text-gray-400">Precision machining</p></div>
+      <div class="process-step" data-aos="fade-up" data-aos-delay="300"><div class="step-number">4</div><h3 class="font-bold">Quality</h3><p class="text-sm text-gray-400">Inspection & testing</p></div>
+      <div class="process-step" data-aos="fade-up" data-aos-delay="400"><div class="step-number">5</div><h3 class="font-bold">Deliver</h3><p class="text-sm text-gray-400">On-time delivery</p></div>
+      <div class="process-step" data-aos="fade-up" data-aos-delay="500"><div class="step-number">6</div><h3 class="font-bold">Support</h3><p class="text-sm text-gray-400">24/7 assistance</p></div>
     </div>
   </div>
 </section>
 
 <!-- Portfolio Section -->
 <section id="portfolio" class="py-24 bg-white/5">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16" data-aos="fade-up">
       <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 mb-4">
         <i class="fas fa-images text-red-400 text-sm"></i>
@@ -547,7 +621,7 @@
 
 <!-- Testimonials Section -->
 <section class="py-24">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12" data-aos="fade-up">
       <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 mb-4">
         <i class="fas fa-star text-red-400 text-sm"></i>
@@ -566,7 +640,7 @@
 
 <!-- About Section -->
 <section id="about" class="py-24 bg-white/5">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-12 items-center">
       <div data-aos="fade-right">
         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 mb-4">
@@ -590,17 +664,13 @@
           <div class="flex items-center gap-3"><i class="fas fa-check-circle text-red-500 text-xl"></i><span>Competitive Pricing</span></div>
         </div>
       </div>
-      <div class="glass-card p-8 text-center" data-aos="fade-left">
+      <div class="glass rounded-3xl p-8 text-center" data-aos="fade-left">
         <div class="w-32 h-32 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
           <i class="fas fa-user-astronaut text-5xl text-white"></i>
         </div>
         <h3 class="text-2xl font-bold">Moffat Shikuku</h3>
         <p class="text-red-400 mb-4">Founder & Lead Engineer</p>
         <p class="text-gray-400 text-sm">25+ years in precision engineering</p>
-        <div class="flex justify-center gap-3 mt-6">
-          <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-red-500 transition"><i class="fab fa-linkedin text-gray-400 hover:text-white"></i></div>
-          <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-red-500 transition"><i class="fab fa-twitter text-gray-400 hover:text-white"></i></div>
-        </div>
       </div>
     </div>
   </div>
@@ -608,7 +678,7 @@
 
 <!-- Contact Section -->
 <section id="contact" class="py-24">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16" data-aos="fade-up">
       <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 mb-4">
         <i class="fas fa-envelope text-red-400 text-sm"></i>
@@ -617,28 +687,28 @@
       <h2 class="text-4xl md:text-5xl font-bold font-['Space_Grotesk'] mb-4">
         Get a <span class="gradient-text">Quote</span>
       </h2>
-      <p class="text-gray-400 max-w-2xl mx-auto">Tell us about your project and we'll respond within 2 hours</p>
+      <p class="text-gray-400 max-w-2xl mx-auto">Tell us about your project — we'll respond within 2 hours</p>
     </div>
     <div class="grid lg:grid-cols-2 gap-8">
       <div class="space-y-4" data-aos="fade-right">
-        <div class="glass-card p-5 flex items-center gap-4">
+        <div class="glass rounded-2xl p-5 flex items-center gap-4">
           <div class="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center"><i class="fas fa-phone text-red-500 text-xl"></i></div>
           <div><h3 class="font-bold">Call Us</h3><a href="tel:+254740248472" class="text-gray-400 hover:text-red-500">+254 740 248 472</a><br><a href="tel:+254797644577" class="text-gray-400 hover:text-red-500">+254 797 644 577</a></div>
         </div>
-        <div class="glass-card p-5 flex items-center gap-4">
+        <div class="glass rounded-2xl p-5 flex items-center gap-4">
           <div class="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center"><i class="fas fa-envelope text-red-500 text-xl"></i></div>
           <div><h3 class="font-bold">Email</h3><a href="mailto:techfixengineering@gmail.com" class="text-gray-400 hover:text-red-500">techfixengineering@gmail.com</a></div>
         </div>
-        <div class="glass-card p-5 flex items-center gap-4">
+        <div class="glass rounded-2xl p-5 flex items-center gap-4">
           <div class="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center"><i class="fas fa-map-marker-alt text-red-500 text-xl"></i></div>
           <div><h3 class="font-bold">Location</h3><p class="text-gray-400">Hawkers Market, Kibera Drive, Nairobi</p></div>
         </div>
-        <div class="glass-card p-5 flex items-center gap-4">
+        <div class="glass rounded-2xl p-5 flex items-center gap-4">
           <div class="w-12 h-12 bg-red-500/20 rounded-full flex items-center justify-center"><i class="fas fa-clock text-red-500 text-xl"></i></div>
-          <div><h3 class="font-bold">Business Hours</h3><p class="text-gray-400">Mon-Fri: 7AM-6PM | Sat: 8AM-4PM</p></div>
+          <div><h3 class="font-bold">Business Hours</h3><p class="text-gray-400">Mon-Fri: 7AM-6PM | Sat: 8AM-4PM | Emergency: 24/7</p></div>
         </div>
       </div>
-      <form id="contactForm" action="https://formspree.io/f/mayvzbkw" method="POST" class="glass-card p-8 space-y-4" data-aos="fade-left">
+      <form id="contactForm" action="https://formspree.io/f/mayvzbkw" method="POST" class="glass rounded-3xl p-8 space-y-4" data-aos="fade-left">
         <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-3 rounded-xl bg-gray-800/50 border border-gray-700 text-white focus:border-red-500 focus:outline-none transition">
         <input type="email" name="email" placeholder="Email Address" required class="w-full px-4 py-3 rounded-xl bg-gray-800/50 border border-gray-700 text-white focus:border-red-500 focus:outline-none transition">
         <input type="tel" name="phone" placeholder="Phone Number" required class="w-full px-4 py-3 rounded-xl bg-gray-800/50 border border-gray-700 text-white focus:border-red-500 focus:outline-none transition">
@@ -660,61 +730,21 @@
   <p class="text-gray-500 text-sm">&copy; 2025 TechFix Engineering Works. Precision Production Engineering Workshop, Nairobi</p>
 </footer>
 
-<!-- Floating Action Button -->
-<div class="fab" id="fab">
-  <i class="fas fa-comment"></i>
+<!-- WhatsApp Float -->
+<a href="https://wa.me/254740248472" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<!-- Scroll to Top -->
+<div class="scroll-top" id="scrollTop">
+  <i class="fas fa-arrow-up"></i>
 </div>
 
 <!-- Scripts -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 
 <script>
 // Initialize AOS
 AOS.init({ duration: 800, once: true, offset: 100 });
-
-// Services Data
-const servicesData = [
-  { category: "lathe", icon: "fa-cog", title: "Lathe Works", desc: "Turning, boring, threading, taper turning, knurling, grooving, drilling, reaming, facing, eccentric turning, polygon turning, multi-start threading.", tags: ["Precision", "All Materials"] },
-  { category: "lathe", icon: "fa-microchip", title: "CNC Services", desc: "CNC turning, CNC milling, 3-axis & 4-axis machining, precision batch production, CAD/CAM integration.", tags: ["High Accuracy", "Repeatability"] },
-  { category: "weld", icon: "fa-fire", title: "All Welding Types", desc: "MIG, TIG, SMAW — aluminum, stainless steel, mild steel, cast iron, bronze, brass.", tags: ["MIG/TIG/Arc", "All Metals"] },
-  { category: "weld", icon: "fa-car", title: "Vehicle & Motorcycle Rim Welding", desc: "Cracked alloy/steel wheel repair, straightening, crack welding for cars and motorcycles.", tags: ["Rims", "Alloy/Steel"] },
-  { category: "weld", icon: "fa-motorcycle", title: "Bearing Sleeve Repair", desc: "When bearing housing widens on motorcycle wheels, we precision-fit a sleeve to restore factory fit.", tags: ["Sleeve Insertion", "Restores Fit"] },
-  { category: "precision", icon: "fa-brakes", title: "Skimming Services", desc: "Brake discs, brake drums, flywheels, clutch pressure plates, cylinder heads.", tags: ["Discs", "Drums", "Flywheels"] },
-  { category: "precision", icon: "fa-thread", title: "Sleeving & Rethreading", desc: "Engine block sleeving, cylinder sleeving, bearing housing repair, thread restoration, Helicoil installation.", tags: ["Engines", "Anywhere"] },
-  { category: "precision", icon: "fa-press", title: "Press Works", desc: "Bush pressing, bearing pressing, gear pressing, shaft pressing — hydraulic press up to 100 tons.", tags: ["Bushes", "Bearings"] },
-  { category: "precision", icon: "fa-coil", title: "Coil Rewinding", desc: "Pump motors, industrial motors, alternators, starters — copper winding, insulation.", tags: ["Motors", "Pumps"] },
-  { category: "precision", icon: "fa-spring", title: "Spring Leaf Tensioning", desc: "Leaf spring re-tensioning, re-arching, crack repair, bushing replacement.", tags: ["Re-tensioning"] },
-  { category: "precision", icon: "fa-pulley", title: "Pulley Making", desc: "Custom pulleys (V-belt, timing), grooving, balancing, keyway cutting.", tags: ["Custom"] },
-  { category: "industrial", icon: "fa-crane", title: "Crane Repair & Modifications", desc: "Hydraulic cranes, overhead cranes — structural repair, hydraulic overhaul, modifications.", tags: ["Repair", "Modification"] },
-  { category: "industrial", icon: "fa-dumbbell", title: "Gym Equipment Fabrication", desc: "Weight plates, leg press, squat racks, bench presses, dumbbells, barbells 4ft-7ft, weight racks.", tags: ["Custom", "Heavy Duty"] },
-  { category: "industrial", icon: "fa-tools", title: "Custom Fittings & Fabrications", desc: "Brackets, mounts, guards, exhaust mods, chassis reinforcements, roll cages.", tags: ["Any Machine", "Any Vehicle"] }
-];
-
-function renderServices(filter = "all") {
-  const grid = document.getElementById("servicesGrid");
-  if (!grid) return;
-  const filtered = filter === "all" ? servicesData : servicesData.filter(s => s.category === filter);
-  grid.innerHTML = filtered.map(s => `
-    <div class="service-card-modern">
-      <div class="service-icon-modern"><i class="fas ${s.icon}"></i></div>
-      <h3 class="text-xl font-bold mb-2">${s.title}</h3>
-      <p class="text-gray-400 text-sm mb-3 leading-relaxed">${s.desc}</p>
-      <div class="flex flex-wrap gap-2">${s.tags.map(t => `<span class="text-xs px-2 py-1 rounded-full bg-red-500/20 text-red-400">${t}</span>`).join("")}</div>
-    </div>
-  `).join("");
-}
-
-// Filter buttons
-document.querySelectorAll(".filter-btn-modern").forEach(btn => {
-  btn.addEventListener("click", () => {
-    document.querySelectorAll(".filter-btn-modern").forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-    renderServices(btn.dataset.filter);
-  });
-});
-renderServices("all");
 
 // Portfolio Items
 const portfolioItems = [
@@ -723,25 +753,26 @@ const portfolioItems = [
   { img: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=500", title: "CNC Machining", desc: "High precision parts" }
 ];
 document.getElementById("portfolioGrid").innerHTML = portfolioItems.map(p => `
-  <div class="group relative rounded-2xl overflow-hidden cursor-pointer">
-    <img src="${p.img}" alt="${p.title}" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
-    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
-      <div><h3 class="font-bold text-white">${p.title}</h3><p class="text-sm text-gray-300">${p.desc}</p></div>
+  <div class="portfolio-item">
+    <img src="${p.img}" alt="${p.title}">
+    <div class="portfolio-overlay">
+      <h3 class="font-bold text-white">${p.title}</h3>
+      <p class="text-sm text-gray-300">${p.desc}</p>
     </div>
   </div>
 `).join("");
 
 // Testimonials
 const testimonials = [
-  { text: "TechFix delivered precision parts faster than expected. Their engineering team is world class.", name: "James Ndungu", role: "Operations Manager" },
-  { text: "The frame straightening and welding repair saved our fleet downtime. Exceptional attention to detail.", name: "Grace Wambui", role: "Fleet Supervisor" },
-  { text: "From consulting to delivery, TechFix was professional, on-time, and above industry standard.", name: "Owen Kariuki", role: "Engineering Lead" }
+  { text: "TechFix delivered precision parts faster than expected. Their engineering team is world class.", name: "James Ndungu", role: "Operations Manager, Titan Industries" },
+  { text: "The frame straightening and welding repair saved our fleet downtime. Exceptional attention to detail.", name: "Grace Wambui", role: "Fleet Supervisor, Nairobi Logistics" },
+  { text: "From consulting to delivery, TechFix was professional, on-time, and above industry standard.", name: "Owen Kariuki", role: "Engineering Lead, SilverMachine Ltd" }
 ];
 const sliderContainer = document.getElementById("testimonialSlider");
 if (sliderContainer) {
   sliderContainer.innerHTML = testimonials.map(t => `
     <div class="swiper-slide">
-      <div class="glass-card p-8 text-center">
+      <div class="glass rounded-3xl p-8 text-center">
         <i class="fas fa-quote-left text-4xl text-red-500 opacity-50 mb-4"></i>
         <p class="text-lg mb-4">${t.text}</p>
         <h4 class="font-bold">${t.name}</h4>
@@ -759,26 +790,12 @@ document.getElementById("yearsCount") && observer.observe(document.getElementByI
 document.getElementById("projectsCount") && observer.observe(document.getElementById("projectsCount"));
 document.getElementById("clientsCount") && observer.observe(document.getElementById("clientsCount"));
 
-// Quote Calculator
-function updatePrice() {
-  const service = document.getElementById("calcService")?.value || "lathe";
-  const material = document.getElementById("calcMaterial")?.value || "mild";
-  const urgency = document.getElementById("calcUrgency")?.value || "normal";
-  let base = { lathe: 2500, cnc: 5000, welding: 3000, skimming: 2000, sleeving: 4000, gym: 15000 }[service] || 2500;
-  const materialMult = { mild: 1, stainless: 1.3, aluminum: 1.2, cast: 1.25 }[material] || 1;
-  const urgencyMult = { normal: 1, express: 1.5, emergency: 2 }[urgency] || 1;
-  document.getElementById("estimatedPrice").innerHTML = `KSh ${Math.round(base * materialMult * urgencyMult).toLocaleString()}`;
-}
-document.getElementById("calcService")?.addEventListener("change", updatePrice);
-document.getElementById("calcMaterial")?.addEventListener("change", updatePrice);
-document.getElementById("calcUrgency")?.addEventListener("change", updatePrice);
-updatePrice();
-
-// PDF Quote
-document.getElementById("pdfQuoteBtn")?.addEventListener("click", () => { alert("PDF quote ready. In production, this would download a professional quote document."); });
-
 // Navbar Scroll Effect
-window.addEventListener("scroll", () => { document.getElementById("navbar")?.classList.toggle("navbar-scrolled", window.scrollY > 50); });
+window.addEventListener("scroll", () => { 
+  document.getElementById("navbar")?.classList.toggle("navbar-scrolled", window.scrollY > 50);
+  const scrollTop = document.getElementById("scrollTop");
+  if (scrollTop) scrollTop.classList.toggle("visible", window.scrollY > 300);
+});
 
 // Mobile Menu Toggle
 document.getElementById("menuToggle")?.addEventListener("click", () => document.getElementById("mobileMenu")?.classList.toggle("active"));
@@ -789,14 +806,19 @@ let isDark = true;
 themeToggle?.addEventListener("click", () => {
   isDark = !isDark;
   document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
-  themeToggle.innerHTML = isDark ? '<i class="fas fa-moon text-white"></i>' : '<i class="fas fa-sun text-white"></i>';
+  themeToggle.innerHTML = isDark ? '<i class="fas fa-moon text-white text-lg"></i>' : '<i class="fas fa-sun text-white text-lg"></i>';
 });
 
-// Floating Action Button - Scroll to top
-document.getElementById("fab")?.addEventListener("click", () => { window.scrollTo({ top: 0, behavior: "smooth" }); });
+// Scroll to Top
+document.getElementById("scrollTop")?.addEventListener("click", () => { window.scrollTo({ top: 0, behavior: "smooth" }); });
 
 // Smooth Scroll
 document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener("click", function(e) { e.preventDefault(); const t = document.querySelector(this.getAttribute("href")); if (t) t.scrollIntoView({ behavior: "smooth", block: "start" }); }));
+
+// Close mobile menu after clicking
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+  link.addEventListener("click", () => document.getElementById("mobileMenu")?.classList.remove("active"));
+});
 </script>
 </body>
 </html>
