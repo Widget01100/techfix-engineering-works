@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>TechFix Engineering | Precision Production Engineering Workshop | Nairobi, Kenya</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="TechFix Engineering Works – premium production engineering workshop in Nairobi. CNC & lathe works, welding, fabrication, sleeving, skimming, rim repair, coil rewinding, press works, gym equipment, crane repair. 25+ years experience." />
+  <meta name="keywords" content="engineering workshop Nairobi, CNC machining Kenya, lathe works, welding and fabrication, sleeving and rethreading, skimming discs and drums, rim welding, coil rewinding, press works, gym equipment fabrication, crane repair, motorcycle bearing sleeve, spring leaf tensioning, pulley making" />
+  <meta name="author" content="TechFix Engineering Works" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="TechFix Engineering | Precision Production Engineering" />
+  <meta property="og:description" content="Premium engineering workshop in Nairobi: CNC, lathe, welding, fabrication, sleeving, skimming, rim repair, coil rewinding, press works, gym equipment, crane repair." />
+  <meta property="og:type" content="website" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='50' font-size='50' fill='%23e74c3c' text-anchor='middle' dominant-baseline='middle'%3E⚙%3C/text%3E%3C/svg%3E">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #0a192f;
+      --primary-dark: #051021;
+      --accent: #e74c3c;
+      --accent-light: #ff6b5b;
+      --accent-dark: #c0392b;
+      --gray-100: #f8f9fa;
+      --gray-200: #e9ecef;
+      --gray-300: #dee2e6;
+      --gray-700: #495057;
+      --gray-800: #343a40;
+      --white: #ffffff;
+      --shadow-sm: 0 4px 12px rgba(0,0,0,0.05);
+      --shadow-md: 0 8px 24px rgba(0,0,0,0.1);
+      --shadow-lg: 0 20px 40px rgba(0,0,0,0.15);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--gray-800);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Space Grotesk', monospace;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; }
+    h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 1rem; }
+    h3 { font-size: 1.4rem; margin-bottom: 0.75rem; }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .section-header h2 {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+    
+    .section-header p {
+      color: var(--gray-700);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Navigation */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(10, 25, 47, 0.95);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      transition: var(--transition);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .navbar.scrolled {
+      background: rgba(10, 25, 47, 0.98);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .nav-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    
+    .logo i {
+      color: var(--accent);
+      font-size: 1.8rem;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+      font-size: 0.95rem;
+    }
+    
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+    
+    .nav-links .cta-nav {
+      background: var(--accent);
+      padding: 8px 20px;
+      border-radius: 40px;
+      color: white;
+    }
+    
+    .nav-links .cta-nav:hover {
+      background: var(--accent-dark);
+      color: white;
+    }
+    
+    .menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+    
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 120px 0 80px;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.5;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    
+    .hero-text h1 {
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+    
+    .hero-text h1 span {
+      color: var(--accent);
+    }
+    
+    .hero-text p {
+      color: rgba(255,255,255,0.8);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      padding: 14px 32px;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-block;
+      font-size: 0.95rem;
+    }
+    
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      border: 2px solid var(--accent);
+    }
+    
+    .btn-primary:hover {
+      background: var(--accent-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(231,76,60,0.3);
+    }
+    
+    .btn-outline {
+      border: 2px solid white;
+      color: white;
+      background: transparent;
+    }
+    
+    .btn-outline:hover {
+      background: white;
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+    
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .stat-item h3 {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+    
+    .stat-item p {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.85rem;
+    }
+    
+    .hero-image {
+      background: rgba(255,255,255,0.05);
+      border-radius: 24px;
+      padding: 20px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .hero-image img {
+      width: 100%;
+      border-radius: 16px;
+    }
+    
+    /* Services */
+    .services {
+      padding: 100px 0;
+      background: var(--gray-100);
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .service-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 1.5rem;
+      transition: var(--transition);
+      border: 1px solid var(--gray-200);
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent);
+    }
+    
+    .service-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    
+    .service-icon i {
+      font-size: 1.5rem;
+      color: white;
+    }
+    
+    .service-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+    
+    .service-card p {
+      color: var(--gray-700);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+    
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    
+    .service-tags span {
+      background: var(--gray-200);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      color: var(--gray-800);
+    }
+    
+    .service-category {
+      margin-bottom: 3rem;
+    }
+    
+    .service-category h3 {
+      font-size: 1.6rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      padding-left: 0.5rem;
+      border-left: 4px solid var(--accent);
+    }
+    
+    /* Process */
+    .process {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .process-step {
+      text-align: center;
+    }
+    
+    .step-number {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: white;
+    }
+    
+    /* Portfolio */
+    .portfolio {
+      padding: 100px 0;
+      background: var(--gray-100);
+    }
+    
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .portfolio-item {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 1/0.8;
+      cursor: pointer;
+      background: var(--gray-300);
+    }
+    
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    
+    .portfolio-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      padding: 1.5rem;
+      transform: translateY(100%);
+      transition: var(--transition);
+    }
+    
+    .portfolio-item:hover .portfolio-overlay {
+      transform: translateY(0);
+    }
+    
+    .portfolio-overlay h4 {
+      color: white;
+      margin-bottom: 0.25rem;
+    }
+    
+    .portfolio-overlay p {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.85rem;
+    }
+    
+    /* About */
+    .about {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    
+    .about-text p {
+      color: var(--gray-700);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    
+    .about-image {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .about-image img {
+      width: 100%;
+      height: auto;
+    }
+    
+    .contact {
+      padding: 100px 0;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+    }
+    
+    .contact-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+    
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .contact-item i {
+      width: 45px;
+      height: 45px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+    
+    .contact-item a {
+      color: white;
+      text-decoration: none;
+    }
+    
+    .contact-form {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 24px;
+    }
+    
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: none;
+      border-radius: 12px;
+      font-family: inherit;
+      background: rgba(255,255,255,0.9);
+    }
+    
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    
+    .contact-form .btn-primary {
+      width: 100%;
+      text-align: center;
+    }
+    
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #25D366;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: white;
+      box-shadow: var(--shadow-lg);
+      z-index: 999;
+      transition: var(--transition);
+    }
+    
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+    
+    .footer {
+      background: var(--primary-dark);
+      color: rgba(255,255,255,0.7);
+      padding: 3rem 0;
+      text-align: center;
+    }
+    
+    /* Responsive */
+    @media (max-width: 968px) {
+      .hero-content, .about-content, .contact-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: var(--primary);
+        flex-direction: column;
+        align-items: center;
+        padding-top: 3rem;
+        transition: var(--transition);
+        gap: 1.5rem;
+      }
+      
+      .nav-links.active {
+        left: 0;
+      }
+      
+      .menu-btn {
+        display: block;
+      }
+      
+      .hero-stats {
+        gap: 1rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 16px;
+      }
+      
+      .hero-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <i class="fas fa-cogs"></i>
+        <span>TechFix</span><span style="color: var(--accent);">Engineering</span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact" class="cta-nav">Get Quote</a></li>
+      </ul>
+      <button class="menu-btn" id="menuBtn"><i class="fas fa-bars"></i></button>
+    </div>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Precision <span>Production Engineering</span> Workshop</h1>
+          <p>CNC machining | Lathe works | Welding & Fabrication | Sleeving | Skimming | Rim Repair | Coil Rewinding | Press Works | Gym Equipment | Crane Repair — Nairobi's most trusted engineering workshop.</p>
+          <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary">Request Quote →</a>
+            <a href="#services" class="btn btn-outline">Explore Services</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item"><h3>25+</h3><p>Years Experience</p></div>
+            <div class="stat-item"><h3>5000+</h3><p>Projects Done</p></div>
+            <div class="stat-item"><h3>24/7</h3><p>Emergency Support</p></div>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=600" alt="TechFix Engineering Workshop">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Engineering Services</h2>
+        <p>Comprehensive precision engineering solutions under one roof</p>
+      </div>
+      
+      <div class="service-category">
+        <h3>⚙️ Lathe & CNC Works</h3>
+        <div class="services-grid">
+          <div class="service-card"><div class="service-icon"><i class="fas fa-cog"></i></div><h3>Lathe Works</h3><p>Turning, boring, threading, taper turning, knurling, grooving, drilling, reaming, facing, eccentric turning, polygon turning, multi-start threading.</p><div class="service-tags"><span>Precision</span><span>All Materials</span></div></div>
+          <div class="service-card"><div class="service-icon"><i class="fas fa-microchip"></i></div><h3>CNC Services</h3><p>CNC turning, CNC milling, 3-axis & 4-axis machining, precision batch production, CAD/CAM integration, complex geometry.</p><div class="service-tags"><span>High Accuracy</span><span>Repeatability</span></div></div>
+          <div class="service-card"><div class="service-icon"><i class="fas fa-drill"></i></div><h3>Drill Works</h3><p>All materials: mild steel, stainless, aluminum, cast iron, brass, bronze, titanium, plastics — precision hole drilling, deep hole drilling, tapping.</p><div class="service-tags"><span>Any Material</span><span>Precision</span></div></div>
+        </div>
+      </div>
+
+      <div class="service-category">
+        <h3>🔧 Welding & Fabrication</h3>
+        <div class="services-grid">
+          <div class="service-card"><div class="service-icon"><i class="fas fa-fire"></i></div><h3>All Welding Types</h3><p>MIG, TIG, SMAW (arc) — aluminum, stainless steel, mild steel, cast iron, bronze, brass. Structural fabrication, custom metalwork.</p><div class="service-tags"><span>MIG/TIG/Arc</span><span>All Metals</span></div></div>
+          <div class="service-card"><div class="service-icon"><i class="fas fa-car"></i></div><h3>Vehicle & Motorcycle Rim Welding</h3><p>Cracked alloy/steel wheel repair, straightening, crack welding, structural reinforcement for cars and motorcycles.</p><div class="service-tags"><span>Rims</span><span>Alloy/Steel</span></div></div>
+          <div class="service-card"><div class="service-icon"><i class="fas fa-motorcycle"></i></div><h3>Bearing Sleeve Repair (Motorcycles)</h3><p>When the bearing housing widens on motorcycle wheels, we precision-fit a sleeve to restore factory bearing fit perfectly.</p><div class="service-tags"><span>Sleeve Insertion</span><span>Restores Fit</span></div></div>
+        </div>
+      </div>
+
+      <div class="service-category">
+        <h3>🛠️ Precision Engineering</h3>
+        <div class="services-grid">
+          <div class="service-card"><div class="service-icon"><i class="fas fa-brakes"></i></div><h3>Skimming Services</h3><p>Brake discs (rotors), brake drums, flywheels, clutch pressure plates, cylinder heads, industrial flywheels.</p><div class="service-tags"><span>Discs</span><span>Drums</span><span>Flywheels</span></div></div>
+          <div class="service-card"><div class="service-icon"><i class="fas fa-thread"></i></div><h3>Sleeving & Rethreading</h3><p>Engine block sleeving, cylinder sleeving, bearing housing repair, thread restoration, Helicoil installation — vehicle & motorcycle engines.</p><div class="service-tags"><span>Anywhere</span><span>Engines</span></div></div>
+          <div class="service-card"><div class="service-icon"><i class="fas fa-press"></i></div><h3>Press Works</h3><p>Bush pressing, bearing pressing, gear pressing, shaft pressing, axle pressing — hydraulic press up to 100 tons.</p><div class="service-tags"><span>Bushes</span><span>Bearings</span><span>Gears</span></div></div>
+          <div class="service-card"><div class="service-icon"><i class="fas fa-coil"></i></div><h3>Coil Rewinding</h3><p>Pump motors, industrial motors, alternators, starters, fan motors — copper winding, insulation, varnishing.</p><div class="service-tags"><span>Motors</span><span>Pumps</span></div></div>
+          <div class="service-card"><div class="service-icon"><i class="fas fa-spring"></i></div><h3>Spring Leaf Tensioning</h3><p>Leaf spring re-tensioning, re-arching, crack repair, bushing replacement for vehicles.</p><div class="service-tags"><span>Re-tensioning</span><span>Re-arching</span></div></div>
+          <div class="service-card"><div class="service-icon"><i class="fas fa-pulley"></i></div><h3>Pulley Making</h3><p>Custom pulleys (V-belt, timing, flat belt), grooving, balancing, keyway cutting.</p><div class="service-tags"><span>Custom</span><span>Balanced</span></div></div>
+        </div>
+      </div>
+
+      <div class="service-category">
+        <h3>🏭 Industrial & Heavy Equipment</h3>
+        <div class="services-grid">
+          <div class="service-card"><div class="service-icon"><i class="fas fa-crane"></i></div><h3>Crane Repair & Modifications</h3><p>Hydraulic cranes, overhead cranes, jib cranes — structural repair, hydraulic overhaul, modifications, safety inspections.</p><div class="service-tags"><span>Repair</span><span>Modification</span></div></div>
+          <div class="service-card"><div class="service-icon"><i class="fas fa-dumbbell"></i></div><h3>Gym Equipment Fabrication</h3><p>Weight plates (jua kali type), leg press machines, squat racks, bench press benches, dumbbells all sizes, barbells 4ft/5ft/6ft/7ft, weight racks, cable machines.</p><div class="service-tags"><span>Custom</span><span>Heavy Duty</span></div></div>
+          <div class="service-card"><div class="service-icon"><i class="fas fa-tools"></i></div><h3>Custom Fittings & Fabrications</h3><p>Brackets, mounts, guards, exhaust mods, chassis reinforcements, roll cages, tool attachments for machines/vehicles/motorcycles.</p><div class="service-tags"><span>Any Machine</span><span>Any Vehicle</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process" id="process">
+    <div class="container">
+      <div class="section-header">
+        <h2>How We Work</h2>
+        <p>From consultation to delivery — precision at every step</p>
+      </div>
+      <div class="process-grid">
+        <div class="process-step"><div class="step-number">1</div><h4>Consult</h4><p>Understand requirements & assess</p></div>
+        <div class="process-step"><div class="step-number">2</div><h4>Plan</h4><p>CAD/CAM & timeline setup</p></div>
+        <div class="process-step"><div class="step-number">3</div><h4>Execute</h4><p>Precision machining/fabrication</p></div>
+        <div class="process-step"><div class="step-number">4</div><h4>QA</h4><p>Full inspection & tolerance check</p></div>
+        <div class="process-step"><div class="step-number">5</div><h4>Deliver</h4><p>On-time, on-spec delivery</p></div>
+        <div class="process-step"><div class="step-number">6</div><h4>Support</h4><p>24/7 after-service support</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Work</h2>
+        <p>Precision engineering projects we've delivered</p>
+      </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?w=400" alt="Lathe work"><div class="portfolio-overlay"><h4>Precision Lathe</h4><p>Custom shafts & components</p></div></div>
+        <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1581093448799-764b32c94f5c?w=400" alt="Welding"><div class="portfolio-overlay"><h4>Structural Welding</h4><p>Heavy fabrication</p></div></div>
+        <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=400" alt="CNC"><div class="portfolio-overlay"><h4>CNC Machining</h4><p>High precision parts</p></div></div>
+        <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1562184557-4f7309ce8f95?w=400" alt="Crane"><div class="portfolio-overlay"><h4>Crane Repair</h4><p>Industrial crane overhaul</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>About TechFix Engineering</h2>
+          <p>Founded by Moffat Shikuku, TechFix Engineering Works is Nairobi's premier production engineering workshop. With over 25 years of hands-on experience, we deliver precision machining, welding, fabrication, and specialized repair services.</p>
+          <p>Our team of skilled engineers and technicians handles everything from simple lathe works to complex CNC machining, industrial crane repairs, and custom gym equipment fabrication.</p>
+          <p><strong>Why choose us?</strong> Uncompromising quality, fast turnaround, competitive pricing, and 24/7 emergency support.</p>
+        </div>
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=500" alt="TechFix Engineering Team">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2 style="color: white; background: none; -webkit-background-clip: unset;">Get a Quote</h2>
+        <p style="color: rgba(255,255,255,0.8);">Tell us about your project — we'll respond within 2 hours</p>
+      </div>
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-item"><i class="fas fa-phone"></i><div><h4>Call Us</h4><a href="tel:+254740248472">+254 740 248 472</a><br><a href="tel:+254797644577">+254 797 644 577</a></div></div>
+          <div class="contact-item"><i class="fas fa-envelope"></i><div><h4>Email</h4><a href="mailto:techfixengineering@gmail.com">techfixengineering@gmail.com</a></div></div>
+          <div class="contact-item"><i class="fas fa-map-marker-alt"></i><div><h4>Location</h4><p>Hawkers Market, Kibera Drive, Nairobi, Kenya</p></div></div>
+          <div class="contact-item"><i class="fas fa-clock"></i><div><h4>Hours</h4><p>Mon-Fri: 7AM-6PM | Sat: 8AM-4PM | Emergency: 24/7</p></div></div>
+        </div>
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/mayvzbkw" method="POST">
+          <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div>
+          <div class="form-group"><input type="email" name="email" placeholder="Email Address" required></div>
+          <div class="form-group"><input type="tel" name="phone" placeholder="Phone Number" required></div>
+          <div class="form-group"><select name="service" required><option value="">Select Service</option><option>Lathe Works</option><option>CNC Machining</option><option>Welding/Fabrication</option><option>Skimming</option><option>Sleeving/Rethreading</option><option>Rim Welding</option><option>Press Works</option><option>Coil Rewinding</option><option>Gym Equipment</option><option>Crane Repair</option><option>Other</option></select></div>
+          <div class="form-group"><textarea name="message" placeholder="Describe your project..." required></textarea></div>
+          <button type="submit" class="btn btn-primary">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 TechFix Engineering Works. All rights reserved. | Precision Production Engineering Workshop, Nairobi</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/254740248472" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+    });
+    
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
+    document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('active')));
+    
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+</body>
+</html>
