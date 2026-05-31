@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services | TechFix Engineering</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="vendor/swiper/swiper.min.css" />
+    <!-- include same CSS/JS as index.html -->
+  </head>
+  <body>
+    <!-- Same navigation -->
+    <section class="page-header">
+      <div class="container">
+        <h1>Our <span>Services</span></h1>
+        <p>Comprehensive precision engineering solutions</p>
+      </div>
+    </section>
+    <section class="services-page">
+      <div class="container">
+        <div class="services-filter">
+          <button class="filter-btn active" data-category="all">All</button>
+          <button class="filter-btn" data-category="lathe">Lathe & CNC</button>
+          <button class="filter-btn" data-category="weld">Welding & Fab</button>
+          <button class="filter-btn" data-category="precision">
+            Precision
+          </button>
+          <button class="filter-btn" data-category="industrial">
+            Industrial
+          </button>
+        </div>
+        <div class="services-grid" id="services-grid-full"></div>
+      </div>
+    </section>
+    <script src="js/services-data.js"></script>
+    <script>
+      renderServices("all");
+      document.querySelectorAll(".filter-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document
+            .querySelectorAll(".filter-btn")
+            .forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          renderServices(btn.dataset.category);
+        });
+      });
+    </script>
+  </body>
+</html>
