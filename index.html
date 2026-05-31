@@ -19,52 +19,57 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='50' font-size='50' fill='%23facc15' text-anchor='middle' dominant-baseline='middle'%3E⚙%3C/text%3E%3C/svg%3E">
   
-  <!-- Tailwind CSS + DaisyUI -->
+  <!-- ============================================ -->
+  <!-- ALL CSS FRAMEWORKS (CDN - Best Performance)  -->
+  <!-- ============================================ -->
+  
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- DaisyUI (on top of Tailwind) -->
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.css" rel="stylesheet" type="text/css" />
   
-  <!-- Font Awesome -->
+  <!-- UIkit - 30+ Components -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.25.16/dist/css/uikit.min.css" />
+  
+  <!-- Animate.css - 37.1% market share -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  
+  <!-- Hover.css - CSS3 Hover Effects -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" />
+  
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="vendor/swiper/swiper.min.css" />
+  
+  <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- AOS -->
+  <!-- AOS Scroll Animations -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   
-  <!-- Swiper -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  
   <style>
+    /* Custom Engineering Styles */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
-    /* NEW COLOR SCHEME - Yellow, Black, White, Red */
     :root {
       --primary-black: #0a0a0a;
       --secondary-black: #1a1a1a;
       --yellow: #facc15;
       --yellow-dark: #eab308;
-      --yellow-glow: rgba(250, 204, 21, 0.3);
       --red: #ef4444;
       --red-dark: #dc2626;
       --white: #ffffff;
       --white-dim: #a3a3a3;
-      --card-bg: rgba(26, 26, 26, 0.8);
-    }
-    
-    [data-theme="light"] {
-      --primary-black: #f5f5f5;
-      --secondary-black: #ffffff;
-      --white: #0a0a0a;
-      --white-dim: #404040;
-      --card-bg: rgba(255, 255, 255, 0.9);
     }
     
     body {
       font-family: 'Inter', sans-serif;
       background: var(--primary-black);
       color: var(--white);
-      transition: all 0.3s ease;
+      overflow-x: hidden;
     }
     
     html { scroll-behavior: smooth; scroll-padding-top: 80px; }
@@ -80,9 +85,10 @@
       -webkit-backdrop-filter: blur(12px);
       backdrop-filter: blur(12px);
       border: 1px solid rgba(250, 204, 21, 0.15);
+      border-radius: 24px;
     }
     
-    /* Gradient Text - Yellow */
+    /* Gradient Text */
     .gradient-text {
       background: linear-gradient(135deg, var(--yellow) 0%, var(--red) 100%);
       -webkit-background-clip: text;
@@ -90,7 +96,7 @@
       color: transparent;
     }
     
-    /* Service Category Card */
+    /* Service Category Cards */
     .service-category {
       background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(10, 10, 10, 0.7));
       border-radius: 32px;
@@ -102,7 +108,6 @@
     
     .service-category:hover {
       border-color: var(--yellow);
-      box-shadow: 0 10px 40px rgba(250, 204, 21, 0.1);
       transform: translateY(-4px);
     }
     
@@ -209,12 +214,6 @@
     .stat-card:hover {
       transform: translateY(-4px);
       border-color: var(--yellow);
-    }
-    
-    .stat-card .stat-number {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--yellow);
     }
     
     /* Process Step */
@@ -488,36 +487,36 @@
           Rim Repair • Coil Rewinding • Press Works • Gym Equipment • Crane Repair
         </p>
         <div class="flex flex-wrap gap-4 mb-12">
-          <a href="#contact" class="px-8 py-3 bg-yellow-500 text-black rounded-full font-semibold hover:bg-yellow-400 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-yellow-500/25">
+          <a href="#contact" class="px-8 py-3 bg-yellow-500 text-black rounded-full font-semibold hover:bg-yellow-400 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-yellow-500/25 hvr-pulse">
             Request Quote →
           </a>
-          <a href="#services" class="px-8 py-3 border-2 border-yellow-500 text-yellow-500 rounded-full font-semibold hover:bg-yellow-500 hover:text-black transition duration-300">
+          <a href="#services" class="px-8 py-3 border-2 border-yellow-500 text-yellow-500 rounded-full font-semibold hover:bg-yellow-500 hover:text-black transition duration-300 hvr-sweep-to-right">
             Explore Services
           </a>
         </div>
         <div class="grid grid-cols-3 gap-6">
-          <div class="stat-card">
-            <div class="stat-number" id="yearsCount">0</div>
+          <div class="stat-card hvr-grow">
+            <div class="text-3xl font-bold text-yellow-500" id="yearsCount">0</div>
             <div class="text-sm text-gray-400 mt-1">Years Experience</div>
           </div>
-          <div class="stat-card">
-            <div class="stat-number" id="projectsCount">0</div>
+          <div class="stat-card hvr-grow">
+            <div class="text-3xl font-bold text-yellow-500" id="projectsCount">0</div>
             <div class="text-sm text-gray-400 mt-1">Projects Completed</div>
           </div>
-          <div class="stat-card">
-            <div class="stat-number" id="clientsCount">0</div>
+          <div class="stat-card hvr-grow">
+            <div class="text-3xl font-bold text-yellow-500" id="clientsCount">0</div>
             <div class="text-sm text-gray-400 mt-1">Happy Clients</div>
           </div>
         </div>
       </div>
       <div data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
-        <div class="glass rounded-3xl p-8 text-center">
+        <div class="glass p-8 text-center">
           <i class="fas fa-cog fa-spin text-6xl text-yellow-500 mb-6"></i>
           <h3 class="text-2xl font-bold text-white mb-3">Fully Equipped Workshop</h3>
           <p class="text-gray-400">CNC • Lathe • Welding • Fabrication • Press • Crane</p>
           <div class="flex justify-center gap-3 mt-6">
-            <span class="px-3 py-1 bg-yellow-500/20 rounded-full text-sm text-yellow-500">24/7 Support</span>
-            <span class="px-3 py-1 bg-yellow-500/20 rounded-full text-sm text-yellow-500">ISO Quality</span>
+            <span class="px-3 py-1 bg-yellow-500/20 rounded-full text-sm text-yellow-500 hvr-pulse">24/7 Support</span>
+            <span class="px-3 py-1 bg-yellow-500/20 rounded-full text-sm text-yellow-500 hvr-pulse">ISO Quality</span>
           </div>
         </div>
       </div>
@@ -546,9 +545,9 @@
         <h3 class="service-category-title">Lathe & CNC Works</h3>
       </div>
       <div class="service-list">
-        <div class="service-item"><div class="service-dot"></div><div class="service-content"><div class="service-name">Lathe Works</div><div class="service-desc">Turning, boring, threading, taper turning, knurling, grooving, drilling on lathe, reaming, countersinking, facing, eccentric turning, polygon turning, multi-start threading</div><div class="service-tags"><span class="service-tag">Precision</span><span class="service-tag">All Materials</span></div></div></div>
-        <div class="service-item"><div class="service-dot"></div><div class="service-content"><div class="service-name">CNC Services</div><div class="service-desc">CNC turning, CNC milling, 3-axis & 4-axis machining, precision batch production, CAD/CAM integration, complex geometry machining</div><div class="service-tags"><span class="service-tag">High Accuracy</span><span class="service-tag">Repeatability</span></div></div></div>
-        <div class="service-item"><div class="service-dot"></div><div class="service-content"><div class="service-name">Drill Works</div><div class="service-desc">All materials: mild steel, stainless, aluminum, cast iron, brass, bronze, titanium, plastics — precision hole drilling, deep hole drilling, countersinking, tapping</div><div class="service-tags"><span class="service-tag">Any Material</span><span class="service-tag">Precision Holes</span></div></div></div>
+        <div class="service-item hvr-forward"><div class="service-dot"></div><div class="service-content"><div class="service-name">Lathe Works</div><div class="service-desc">Turning, boring, threading, taper turning, knurling, grooving, drilling on lathe, reaming, countersinking, facing, eccentric turning, polygon turning, multi-start threading</div><div class="service-tags"><span class="service-tag">Precision</span><span class="service-tag">All Materials</span></div></div></div>
+        <div class="service-item hvr-forward"><div class="service-dot"></div><div class="service-content"><div class="service-name">CNC Services</div><div class="service-desc">CNC turning, CNC milling, 3-axis & 4-axis machining, precision batch production, CAD/CAM integration, complex geometry machining</div><div class="service-tags"><span class="service-tag">High Accuracy</span><span class="service-tag">Repeatability</span></div></div></div>
+        <div class="service-item hvr-forward"><div class="service-dot"></div><div class="service-content"><div class="service-name">Drill Works</div><div class="service-desc">All materials: mild steel, stainless, aluminum, cast iron, brass, bronze, titanium, plastics — precision hole drilling, deep hole drilling, countersinking, tapping</div><div class="service-tags"><span class="service-tag">Any Material</span><span class="service-tag">Precision Holes</span></div></div></div>
       </div>
     </div>
     
@@ -559,10 +558,10 @@
         <h3 class="service-category-title">Welding & Fabrication</h3>
       </div>
       <div class="service-list">
-        <div class="service-item"><div class="service-dot"></div><div class="service-content"><div class="service-name">All Welding Types</div><div class="service-desc">MIG, TIG, SMAW (arc) welding — aluminum, stainless steel, mild steel, cast iron, bronze, brass. Structural fabrication, custom metalwork, repairs</div><div class="service-tags"><span class="service-tag">MIG/TIG/Arc</span><span class="service-tag">All Metals</span></div></div></div>
-        <div class="service-item"><div class="service-dot"></div><div class="service-content"><div class="service-name">Vehicle & Motorcycle Rim Welding</div><div class="service-desc">Cracked alloy/steel wheel repair, straightening, crack welding, structural reinforcement for cars and motorcycles</div><div class="service-tags"><span class="service-tag">Rims</span><span class="service-tag">Alloy/Steel</span></div></div></div>
-        <div class="service-item"><div class="service-dot"></div><div class="service-content"><div class="service-name">Motorcycle Bearing Sleeve Repair</div><div class="service-desc">When bearing housing widens on motorcycle wheels, we precision-fit a sleeve to restore factory bearing fit perfectly</div><div class="service-tags"><span class="service-tag">Sleeve Insertion</span><span class="service-tag">Restores Fit</span></div></div></div>
-        <div class="service-item"><div class="service-dot"></div><div class="service-content"><div class="service-name">Custom Fittings & Fabrications</div><div class="service-desc">Brackets, mounts, guards, exhaust modifications, chassis reinforcements, roll cages, tool attachments for machines, vehicles, and motorcycles</div><div class="service-tags"><span class="service-tag">Any Machine</span><span class="service-tag">Any Vehicle</span></div></div></div>
+        <div class="service-item hvr-forward"><div class="service-dot"></div><div class="service-content"><div class="service-name">All Welding Types</div><div class="service-desc">MIG, TIG, SMAW (arc) welding — aluminum, stainless steel, mild steel, cast iron, bronze, brass. Structural fabrication, custom metalwork, repairs</div><div class="service-tags"><span class="service-tag">MIG/TIG/Arc</span><span class="service-tag">All Metals</span></div></div></div>
+        <div class="service-item hvr-forward"><div class="service-dot"></div><div class="service-content"><div class="service-name">Vehicle & Motorcycle Rim Welding</div><div class="service-desc">Cracked alloy/steel wheel repair, straightening, crack welding, structural reinforcement for cars and motorcycles</div><div class="service-tags"><span class="service-tag">Rims</span><span class="service-tag">Alloy/Steel</span></div></div></div>
+        <div class="service-item hvr-forward"><div class="service-dot"></div><div class="service-content"><div class="service-name">Motorcycle Bearing Sleeve Repair</div><div class="service-desc">When bearing housing widens on motorcycle wheels, we precision-fit a sleeve to restore factory bearing fit perfectly</div><div class="service-tags"><span class="service-tag">Sleeve Insertion</span><span class="service-tag">Restores Fit</span></div></div></div>
+        <div class="service-item hvr-forward"><div class="service-dot"></div><div class="service-content"><div class="service-name">Custom Fittings & Fabrications</div><div class="service-desc">Brackets, mounts, guards, exhaust modifications, chassis reinforcements, roll cages, tool attachments for machines, vehicles, and motorcycles</div><div class="service-tags"><span class="service-tag">Any Machine</span><span class="service-tag">Any Vehicle</span></div></div></div>
       </div>
     </div>
     
@@ -573,12 +572,12 @@
         <h3 class="service-category-title">Precision Engineering</h3>
       </div>
       <div class="service-list">
-        <div class="service-item"><div class="service-dot"></div><div class="service-content"><div class="service-name">Skimming Services</div><div class="service-desc">Brake discs (rotors), brake drums, flywheels, clutch pressure plates, cylinder heads, industrial flywheels</div><div class="service-tags"><span class="service-tag">Discs</span><span class="service-tag">Drums</span><span class="service-tag">Flywheels</span></div></div></div>
-        <div class="service-item"><div class="service-dot"></div><div class="service-content"><div class="service-name">Sleeving & Rethreading</div><div class="service-desc">Engine block sleeving, cylinder sleeving, bearing housing repair, thread restoration, Helicoil installation, oversized thread repair — vehicle engines, motorcycle engines, industrial machinery</div><div class="service-tags"><span class="service-tag">Engines</span><span class="service-tag">Anywhere</span></div></div></div>
-        <div class="service-item"><div class="service-dot"></div><div class="service-content"><div class="service-name">Press Works</div><div class="service-desc">Bush pressing, bearing pressing, gear pressing, shaft pressing, axle pressing — hydraulic press work up to 100 tons</div><div class="service-tags"><span class="service-tag">Bushes</span><span class="service-tag">Bearings</span><span class="service-tag">Gears</span></div></div></div>
-        <div class="service-item"><div class="service-dot"></div><div class="service-content"><div class="service-name">Coil Rewinding</div><div class="service-desc">Pump motors, industrial motors, alternators, starters, fan motors — copper winding, insulation, varnishing</div><div class="service-tags"><span class="service-tag">Motors</span><span class="service-tag">Pumps</span></div></div></div>
-        <div class="service-item"><div class="service-dot"></div><div class="service-content"><div class="service-name">Spring Leaf Tensioning</div><div class="service-desc">Leaf spring re-tensioning, re-arching, crack repair, bushing replacement for vehicles</div><div class="service-tags"><span class="service-tag">Re-tensioning</span><span class="service-tag">Re-arching</span></div></div></div>
-        <div class="service-item"><div class="service-dot"></div><div class="service-content"><div class="service-name">Pulley Making</div><div class="service-desc">Custom pulleys (V-belt, timing, flat belt), grooving, balancing, keyway cutting</div><div class="service-tags"><span class="service-tag">Custom</span><span class="service-tag">Balanced</span></div></div></div>
+        <div class="service-item hvr-forward"><div class="service-dot"></div><div class="service-content"><div class="service-name">Skimming Services</div><div class="service-desc">Brake discs (rotors), brake drums, flywheels, clutch pressure plates, cylinder heads, industrial flywheels</div><div class="service-tags"><span class="service-tag">Discs</span><span class="service-tag">Drums</span><span class="service-tag">Flywheels</span></div></div></div>
+        <div class="service-item hvr-forward"><div class="service-dot"></div><div class="service-content"><div class="service-name">Sleeving & Rethreading</div><div class="service-desc">Engine block sleeving, cylinder sleeving, bearing housing repair, thread restoration, Helicoil installation, oversized thread repair — vehicle engines, motorcycle engines, industrial machinery</div><div class="service-tags"><span class="service-tag">Engines</span><span class="service-tag">Anywhere</span></div></div></div>
+        <div class="service-item hvr-forward"><div class="service-dot"></div><div class="service-content"><div class="service-name">Press Works</div><div class="service-desc">Bush pressing, bearing pressing, gear pressing, shaft pressing, axle pressing — hydraulic press work up to 100 tons</div><div class="service-tags"><span class="service-tag">Bushes</span><span class="service-tag">Bearings</span><span class="service-tag">Gears</span></div></div></div>
+        <div class="service-item hvr-forward"><div class="service-dot"></div><div class="service-content"><div class="service-name">Coil Rewinding</div><div class="service-desc">Pump motors, industrial motors, alternators, starters, fan motors — copper winding, insulation, varnishing</div><div class="service-tags"><span class="service-tag">Motors</span><span class="service-tag">Pumps</span></div></div></div>
+        <div class="service-item hvr-forward"><div class="service-dot"></div><div class="service-content"><div class="service-name">Spring Leaf Tensioning</div><div class="service-desc">Leaf spring re-tensioning, re-arching, crack repair, bushing replacement for vehicles</div><div class="service-tags"><span class="service-tag">Re-tensioning</span><span class="service-tag">Re-arching</span></div></div></div>
+        <div class="service-item hvr-forward"><div class="service-dot"></div><div class="service-content"><div class="service-name">Pulley Making</div><div class="service-desc">Custom pulleys (V-belt, timing, flat belt), grooving, balancing, keyway cutting</div><div class="service-tags"><span class="service-tag">Custom</span><span class="service-tag">Balanced</span></div></div></div>
       </div>
     </div>
     
@@ -589,8 +588,8 @@
         <h3 class="service-category-title">Industrial & Heavy Equipment</h3>
       </div>
       <div class="service-list">
-        <div class="service-item"><div class="service-dot"></div><div class="service-content"><div class="service-name">Crane Repair & Modifications</div><div class="service-desc">Hydraulic cranes, overhead cranes, jib cranes — structural repair, hydraulic system overhaul, modifications, safety inspections</div><div class="service-tags"><span class="service-tag">Repair</span><span class="service-tag">Modification</span></div></div></div>
-        <div class="service-item"><div class="service-dot"></div><div class="service-content"><div class="service-name">Gym Equipment Fabrication</div><div class="service-desc">Weight plates (jua kali type), leg press machines, squat racks, bench press benches, dumbbells all sizes, barbells 4ft/5ft/6ft/7ft, weight racks, cable machines, pulley systems, custom gym rigs</div><div class="service-tags"><span class="service-tag">Custom</span><span class="service-tag">Heavy Duty</span></div></div></div>
+        <div class="service-item hvr-forward"><div class="service-dot"></div><div class="service-content"><div class="service-name">Crane Repair & Modifications</div><div class="service-desc">Hydraulic cranes, overhead cranes, jib cranes — structural repair, hydraulic system overhaul, modifications, safety inspections</div><div class="service-tags"><span class="service-tag">Repair</span><span class="service-tag">Modification</span></div></div></div>
+        <div class="service-item hvr-forward"><div class="service-dot"></div><div class="service-content"><div class="service-name">Gym Equipment Fabrication</div><div class="service-desc">Weight plates (jua kali type), leg press machines, squat racks, bench press benches, dumbbells all sizes, barbells 4ft/5ft/6ft/7ft, weight racks, cable machines, pulley systems, custom gym rigs</div><div class="service-tags"><span class="service-tag">Custom</span><span class="service-tag">Heavy Duty</span></div></div></div>
       </div>
     </div>
   </div>
@@ -610,12 +609,12 @@
       <p class="text-gray-400 max-w-2xl mx-auto">Precision at every step — from consultation to delivery</p>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-      <div class="process-step" data-aos="fade-up" data-aos-delay="0"><div class="step-number">1</div><h3 class="font-bold text-white">Consult</h3><p class="text-sm text-gray-400">Understand requirements</p></div>
-      <div class="process-step" data-aos="fade-up" data-aos-delay="100"><div class="step-number">2</div><h3 class="font-bold text-white">Plan</h3><p class="text-sm text-gray-400">CAD/CAM design</p></div>
-      <div class="process-step" data-aos="fade-up" data-aos-delay="200"><div class="step-number">3</div><h3 class="font-bold text-white">Execute</h3><p class="text-sm text-gray-400">Precision machining</p></div>
-      <div class="process-step" data-aos="fade-up" data-aos-delay="300"><div class="step-number">4</div><h3 class="font-bold text-white">Quality</h3><p class="text-sm text-gray-400">Inspection & testing</p></div>
-      <div class="process-step" data-aos="fade-up" data-aos-delay="400"><div class="step-number">5</div><h3 class="font-bold text-white">Deliver</h3><p class="text-sm text-gray-400">On-time delivery</p></div>
-      <div class="process-step" data-aos="fade-up" data-aos-delay="500"><div class="step-number">6</div><h3 class="font-bold text-white">Support</h3><p class="text-sm text-gray-400">24/7 assistance</p></div>
+      <div class="process-step hvr-grow" data-aos="fade-up" data-aos-delay="0"><div class="step-number">1</div><h3 class="font-bold text-white">Consult</h3><p class="text-sm text-gray-400">Understand requirements</p></div>
+      <div class="process-step hvr-grow" data-aos="fade-up" data-aos-delay="100"><div class="step-number">2</div><h3 class="font-bold text-white">Plan</h3><p class="text-sm text-gray-400">CAD/CAM design</p></div>
+      <div class="process-step hvr-grow" data-aos="fade-up" data-aos-delay="200"><div class="step-number">3</div><h3 class="font-bold text-white">Execute</h3><p class="text-sm text-gray-400">Precision machining</p></div>
+      <div class="process-step hvr-grow" data-aos="fade-up" data-aos-delay="300"><div class="step-number">4</div><h3 class="font-bold text-white">Quality</h3><p class="text-sm text-gray-400">Inspection & testing</p></div>
+      <div class="process-step hvr-grow" data-aos="fade-up" data-aos-delay="400"><div class="step-number">5</div><h3 class="font-bold text-white">Deliver</h3><p class="text-sm text-gray-400">On-time delivery</p></div>
+      <div class="process-step hvr-grow" data-aos="fade-up" data-aos-delay="500"><div class="step-number">6</div><h3 class="font-bold text-white">Support</h3><p class="text-sm text-gray-400">24/7 assistance</p></div>
     </div>
   </div>
 </section>
@@ -677,12 +676,12 @@
           and custom gym equipment fabrication.
         </p>
         <div class="flex flex-col gap-3">
-          <div class="flex items-center gap-3"><i class="fas fa-check-circle text-yellow-500 text-xl"></i><span class="text-white">ISO Quality Standards</span></div>
-          <div class="flex items-center gap-3"><i class="fas fa-check-circle text-yellow-500 text-xl"></i><span class="text-white">24/7 Emergency Support</span></div>
-          <div class="flex items-center gap-3"><i class="fas fa-check-circle text-yellow-500 text-xl"></i><span class="text-white">Competitive Pricing</span></div>
+          <div class="flex items-center gap-3 hvr-forward"><i class="fas fa-check-circle text-yellow-500 text-xl"></i><span class="text-white">ISO Quality Standards</span></div>
+          <div class="flex items-center gap-3 hvr-forward"><i class="fas fa-check-circle text-yellow-500 text-xl"></i><span class="text-white">24/7 Emergency Support</span></div>
+          <div class="flex items-center gap-3 hvr-forward"><i class="fas fa-check-circle text-yellow-500 text-xl"></i><span class="text-white">Competitive Pricing</span></div>
         </div>
       </div>
-      <div class="glass rounded-3xl p-8 text-center" data-aos="fade-left">
+      <div class="glass p-8 text-center" data-aos="fade-left">
         <div class="w-32 h-32 bg-gradient-to-br from-yellow-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
           <i class="fas fa-user-astronaut text-5xl text-black"></i>
         </div>
@@ -709,19 +708,19 @@
     </div>
     <div class="grid lg:grid-cols-2 gap-8">
       <div class="space-y-4" data-aos="fade-right">
-        <div class="glass rounded-2xl p-5 flex items-center gap-4">
+        <div class="glass rounded-2xl p-5 flex items-center gap-4 hvr-grow">
           <div class="w-12 h-12 bg-yellow-500/20 rounded-full flex items-center justify-center"><i class="fas fa-phone text-yellow-500 text-xl"></i></div>
           <div><h3 class="font-bold text-white">Call Us</h3><a href="tel:+254740248472" class="text-gray-400 hover:text-yellow-500">+254 740 248 472</a><br><a href="tel:+254797644577" class="text-gray-400 hover:text-yellow-500">+254 797 644 577</a></div>
         </div>
-        <div class="glass rounded-2xl p-5 flex items-center gap-4">
+        <div class="glass rounded-2xl p-5 flex items-center gap-4 hvr-grow">
           <div class="w-12 h-12 bg-yellow-500/20 rounded-full flex items-center justify-center"><i class="fas fa-envelope text-yellow-500 text-xl"></i></div>
           <div><h3 class="font-bold text-white">Email</h3><a href="mailto:techfixengineering@gmail.com" class="text-gray-400 hover:text-yellow-500">techfixengineering@gmail.com</a></div>
         </div>
-        <div class="glass rounded-2xl p-5 flex items-center gap-4">
+        <div class="glass rounded-2xl p-5 flex items-center gap-4 hvr-grow">
           <div class="w-12 h-12 bg-yellow-500/20 rounded-full flex items-center justify-center"><i class="fas fa-map-marker-alt text-yellow-500 text-xl"></i></div>
           <div><h3 class="font-bold text-white">Location</h3><p class="text-gray-400">Hawkers Market, Kibera Drive, Nairobi</p></div>
         </div>
-        <div class="glass rounded-2xl p-5 flex items-center gap-4">
+        <div class="glass rounded-2xl p-5 flex items-center gap-4 hvr-grow">
           <div class="w-12 h-12 bg-yellow-500/20 rounded-full flex items-center justify-center"><i class="fas fa-clock text-yellow-500 text-xl"></i></div>
           <div><h3 class="font-bold text-white">Business Hours</h3><p class="text-gray-400">Mon-Fri: 7AM-6PM | Sat: 8AM-4PM | Emergency: 24/7</p></div>
         </div>
@@ -737,7 +736,7 @@
           <option>Press Works</option><option>Coil Rewinding</option><option>Gym Equipment</option><option>Crane Repair</option>
         </select>
         <textarea name="message" placeholder="Describe your project..." rows="4" required class="w-full px-4 py-3 rounded-xl bg-black/30 border border-gray-700 text-white focus:border-yellow-500 focus:outline-none transition"></textarea>
-        <button type="submit" class="w-full py-3 bg-yellow-500 text-black rounded-xl font-semibold hover:bg-yellow-400 transition-all duration-300">Send Message →</button>
+        <button type="submit" class="w-full py-3 bg-yellow-500 text-black rounded-xl font-semibold hover:bg-yellow-400 transition-all duration-300 hvr-pulse">Send Message →</button>
       </form>
     </div>
   </div>
@@ -748,7 +747,7 @@
   <p class="text-gray-500 text-sm">&copy; 2025 TechFix Engineering Works. Precision Production Engineering Workshop, Nairobi</p>
 </footer>
 
-<!-- WhatsApp Float - fixed with rel="noopener" -->
+<!-- WhatsApp Float -->
 <a href="https://wa.me/254740248472" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
   <i class="fab fa-whatsapp"></i>
 </a>
@@ -760,7 +759,9 @@
 
 <!-- Scripts -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="vendor/swiper/swiper.min.js"></script>
+<script src="vendor/gsap/gsap.min.js"></script>
+<script src="vendor/gsap/ScrollTrigger.min.js"></script>
 
 <script>
 // Initialize AOS
@@ -773,7 +774,7 @@ const portfolioItems = [
   { img: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=500", title: "CNC Machining", desc: "High precision parts" }
 ];
 document.getElementById("portfolioGrid").innerHTML = portfolioItems.map(p => `
-  <div class="portfolio-item">
+  <div class="portfolio-item hvr-grow">
     <img src="${p.img}" alt="${p.title}">
     <div class="portfolio-overlay">
       <h3 class="font-bold text-white">${p.title}</h3>
@@ -784,9 +785,9 @@ document.getElementById("portfolioGrid").innerHTML = portfolioItems.map(p => `
 
 // Testimonials
 const testimonials = [
-  { text: "TechFix delivered precision parts faster than expected. Their engineering team is world class.", name: "James Ndungu", role: "Operations Manager, Titan Industries" },
-  { text: "The frame straightening and welding repair saved our fleet downtime. Exceptional attention to detail.", name: "Grace Wambui", role: "Fleet Supervisor, Nairobi Logistics" },
-  { text: "From consulting to delivery, TechFix was professional, on-time, and above industry standard.", name: "Owen Kariuki", role: "Engineering Lead, SilverMachine Ltd" }
+  { text: "TechFix delivered precision parts faster than expected. Their engineering team is world class.", name: "James Ndungu", role: "Operations Manager" },
+  { text: "The frame straightening and welding repair saved our fleet downtime. Exceptional attention to detail.", name: "Grace Wambui", role: "Fleet Supervisor" },
+  { text: "From consulting to delivery, TechFix was professional, on-time, and above industry standard.", name: "Owen Kariuki", role: "Engineering Lead" }
 ];
 const sliderContainer = document.getElementById("testimonialSlider");
 if (sliderContainer) {
@@ -803,9 +804,26 @@ if (sliderContainer) {
   new Swiper('.testimonial-swiper', { loop: true, autoplay: { delay: 5000 }, pagination: { el: '.swiper-pagination', clickable: true } });
 }
 
-// Counter Animation
-function animateCounter(el, target) { let current = 0; const step = target / 60; const timer = setInterval(() => { current += step; if (current >= target) { el.innerText = target; clearInterval(timer); } else el.innerText = Math.floor(current); }, 20); }
-const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { if (e.target.id === "yearsCount") animateCounter(e.target, 25); if (e.target.id === "projectsCount") animateCounter(e.target, 5000); if (e.target.id === "clientsCount") animateCounter(e.target, 99); observer.unobserve(e.target); } }); });
+// Counter Animation with GSAP
+function animateCounter(el, target) { 
+  gsap.to(el, {
+    innerHTML: target,
+    duration: 2,
+    ease: "power2.out",
+    snap: { innerHTML: 1 },
+    onUpdate: function() { el.innerHTML = Math.floor(el.innerHTML); }
+  });
+}
+const observer = new IntersectionObserver((entries) => { 
+  entries.forEach(e => { 
+    if (e.isIntersecting) { 
+      if (e.target.id === "yearsCount") animateCounter(e.target, 25);
+      if (e.target.id === "projectsCount") animateCounter(e.target, 5000);
+      if (e.target.id === "clientsCount") animateCounter(e.target, 99);
+      observer.unobserve(e.target);
+    } 
+  }); 
+});
 document.getElementById("yearsCount") && observer.observe(document.getElementById("yearsCount"));
 document.getElementById("projectsCount") && observer.observe(document.getElementById("projectsCount"));
 document.getElementById("clientsCount") && observer.observe(document.getElementById("clientsCount"));
@@ -838,6 +856,37 @@ document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener("click
 // Close mobile menu after clicking
 document.querySelectorAll('.mobile-menu a').forEach(link => {
   link.addEventListener("click", () => document.getElementById("mobileMenu")?.classList.remove("active"));
+});
+
+// GSAP Scroll Animations
+gsap.registerPlugin(ScrollTrigger);
+
+// Animate service categories on scroll
+gsap.utils.toArray(".service-category").forEach(category => {
+  gsap.from(category, {
+    scrollTrigger: {
+      trigger: category,
+      start: "top 85%",
+      toggleActions: "play none none reverse"
+    },
+    opacity: 0,
+    y: 50,
+    duration: 0.8,
+    ease: "power2.out"
+  });
+});
+
+// Animate process steps sequentially
+gsap.from(".process-step", {
+  scrollTrigger: {
+    trigger: "#process",
+    start: "top 80%"
+  },
+  opacity: 0,
+  y: 30,
+  stagger: 0.1,
+  duration: 0.6,
+  ease: "back.out(0.5)"
 });
 </script>
 </body>
