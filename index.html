@@ -74,9 +74,10 @@
     ::-webkit-scrollbar-track { background: var(--secondary-black); }
     ::-webkit-scrollbar-thumb { background: var(--yellow); border-radius: 10px; }
     
-    /* Glass Effect */
+    /* Glass Effect with Safari support */
     .glass {
       background: rgba(26, 26, 26, 0.7);
+      -webkit-backdrop-filter: blur(12px);
       backdrop-filter: blur(12px);
       border: 1px solid rgba(250, 204, 21, 0.15);
     }
@@ -196,6 +197,7 @@
     /* Stat Card */
     .stat-card {
       background: rgba(26, 26, 26, 0.6);
+      -webkit-backdrop-filter: blur(8px);
       backdrop-filter: blur(8px);
       border-radius: 20px;
       padding: 1.5rem;
@@ -220,6 +222,7 @@
       text-align: center;
       padding: 1.5rem;
       background: rgba(26, 26, 26, 0.5);
+      -webkit-backdrop-filter: blur(8px);
       backdrop-filter: blur(8px);
       border-radius: 24px;
       transition: all 0.3s ease;
@@ -249,6 +252,7 @@
     /* Navigation */
     .navbar {
       background: rgba(10, 10, 10, 0.95);
+      -webkit-backdrop-filter: blur(20px);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid rgba(250, 204, 21, 0.15);
     }
@@ -278,30 +282,6 @@
       transform: rotate(15deg);
     }
     
-    /* Buttons */
-    .btn-yellow {
-      background: linear-gradient(135deg, var(--yellow), var(--yellow-dark));
-      color: var(--primary-black);
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-    
-    .btn-yellow:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px var(--yellow-glow);
-    }
-    
-    .btn-outline-yellow {
-      border: 2px solid var(--yellow);
-      color: var(--yellow);
-      background: transparent;
-    }
-    
-    .btn-outline-yellow:hover {
-      background: var(--yellow);
-      color: var(--primary-black);
-    }
-    
     /* Mobile Menu */
     @media (max-width: 768px) {
       .mobile-menu {
@@ -311,6 +291,7 @@
         width: 100%;
         height: calc(100vh - 70px);
         background: rgba(10, 10, 10, 0.98);
+        -webkit-backdrop-filter: blur(20px);
         backdrop-filter: blur(20px);
         transition: left 0.3s ease;
         z-index: 999;
@@ -438,19 +419,6 @@
       50% { transform: translate(80px, 150px) scale(0.9); }
       75% { transform: translate(-80px, 80px) scale(1.05); }
     }
-    
-    /* Yellow text highlights */
-    .text-yellow {
-      color: var(--yellow);
-    }
-    
-    .border-yellow {
-      border-color: var(--yellow);
-    }
-    
-    .bg-yellow {
-      background: var(--yellow);
-    }
   </style>
 </head>
 <body>
@@ -482,10 +450,10 @@
         <a href="#contact" class="bg-yellow-500 text-black px-5 py-2 rounded-full hover:bg-yellow-400 transition shadow-lg shadow-yellow-500/25 font-semibold">Get Quote</a>
       </div>
       <div class="flex items-center gap-3">
-        <div class="theme-btn" id="themeToggle">
+        <button class="theme-btn" id="themeToggle" aria-label="Toggle dark/light mode">
           <i class="fas fa-moon text-yellow-500 text-lg"></i>
-        </div>
-        <button class="md:hidden text-2xl text-white" id="menuToggle">
+        </button>
+        <button class="md:hidden text-2xl text-white" id="menuToggle" aria-label="Menu">
           <i class="fas fa-bars"></i>
         </button>
       </div>
@@ -762,7 +730,7 @@
         <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-3 rounded-xl bg-black/30 border border-gray-700 text-white focus:border-yellow-500 focus:outline-none transition">
         <input type="email" name="email" placeholder="Email Address" required class="w-full px-4 py-3 rounded-xl bg-black/30 border border-gray-700 text-white focus:border-yellow-500 focus:outline-none transition">
         <input type="tel" name="phone" placeholder="Phone Number" required class="w-full px-4 py-3 rounded-xl bg-black/30 border border-gray-700 text-white focus:border-yellow-500 focus:outline-none transition">
-        <select name="service" required class="w-full px-4 py-3 rounded-xl bg-black/30 border border-gray-700 text-white focus:border-yellow-500 focus:outline-none transition">
+        <select name="service" required class="w-full px-4 py-3 rounded-xl bg-black/30 border border-gray-700 text-white focus:border-yellow-500 focus:outline-none transition" title="Select a service type">
           <option value="">Select Service</option>
           <option>Lathe Works</option><option>CNC Machining</option><option>Welding/Fabrication</option>
           <option>Skimming</option><option>Sleeving/Rethreading</option><option>Rim Welding</option>
@@ -780,11 +748,13 @@
   <p class="text-gray-500 text-sm">&copy; 2025 TechFix Engineering Works. Precision Production Engineering Workshop, Nairobi</p>
 </footer>
 
-<!-- WhatsApp Float -->
-<a href="https://wa.me/254740248472" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<!-- WhatsApp Float - fixed with rel="noopener" -->
+<a href="https://wa.me/254740248472" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
 
 <!-- Scroll to Top -->
-<div class="scroll-top" id="scrollTop">
+<div class="scroll-top" id="scrollTop" aria-label="Scroll to top">
   <i class="fas fa-arrow-up"></i>
 </div>
 
