@@ -1,83 +1,30 @@
-// Main entry point after DOM loaded
-document.addEventListener("DOMContentLoaded", () => {
-  // Initialize services grid
-  if (typeof renderServices !== "undefined") {
-    renderServices("all");
-    // Filter buttons
-    document.querySelectorAll(".filter-btn").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        document
-          .querySelectorAll(".filter-btn")
-          .forEach((b) => b.classList.remove("active"));
-        btn.classList.add("active");
-        renderServices(btn.dataset.category);
-      });
-    });
-  }
-
-  // Theme toggle with localStorage
-  const themeToggle = document.getElementById("themeToggle");
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme)
-    document.documentElement.setAttribute("data-theme", savedTheme);
-  themeToggle?.addEventListener("click", () => {
-    const current = document.documentElement.getAttribute("data-theme");
-    const newTheme = current === "dark" ? "light" : "dark";
-    document.documentElement.setAttribute("data-theme", newTheme);
-    localStorage.setItem("theme", newTheme);
-    themeToggle.innerHTML =
-      newTheme === "dark"
-        ? '<i class="fas fa-moon"></i>'
-        : '<i class="fas fa-sun"></i>';
-  });
-
-  // Mobile menu toggle
-  const menuToggle = document.getElementById("menuToggle");
-  const mobileMenu = document.getElementById("mobileMenu");
-  menuToggle?.addEventListener("click", () => {
-    mobileMenu.classList.toggle("active");
-    menuToggle.classList.toggle("active");
-  });
-  document.querySelectorAll(".mobile-menu a").forEach((link) => {
-    link.addEventListener("click", () => mobileMenu.classList.remove("active"));
-  });
-
-  // Lottie gear animation
-  if (typeof lottie !== "undefined") {
-    const gearContainer = document.getElementById("lottie-gear");
-    if (gearContainer) {
-      lottie.loadAnimation({
-        container: gearContainer,
-        renderer: "svg",
-        loop: true,
-        autoplay: true,
-        path: "https://assets10.lottiefiles.com/packages/lf20_puciaact.json",
-      });
-    }
-  }
-
-  // Confetti on form submit (if contact page)
-  const contactForm = document.getElementById("contactForm");
-  if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      if (typeof triggerConfetti === "function") triggerConfetti();
-      setTimeout(() => {
-        contactForm.submit();
-      }, 500);
-    });
-  }
+﻿const portfolioSwiper = new Swiper('.portfolio-swiper', {
+  slidesPerView: 1, spaceBetween: 30, loop: true, parallax: true, speed: 800,
+  pagination: { el: '.swiper-pagination', clickable: true },
+  navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+  breakpoints: { 640: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }
 });
-
-// Custom cursor magnetic effect
-document.querySelectorAll(".magnetic").forEach((el) => {
-  el.addEventListener("mousemove", (e) => {
-    const rect = el.getBoundingClientRect();
-    const x = (e.clientX - rect.left - rect.width / 2) * 0.3;
-    const y = (e.clientY - rect.top - rect.height / 2) * 0.3;
-    el.style.transform = `translate(${x}px, ${y}px)`;
-  });
-  el.addEventListener("mouseleave", () => {
-    el.style.transform = "";
-  });
+new Swiper('.testimonial-swiper', {
+  slidesPerView: 1, spaceBetween: 30, loop: true, autoplay: { delay: 5000, disableOnInteraction: false },
+  pagination: { el: '.swiper-pagination', clickable: true }
 });
+const portfolioImages = [
+  { img: "https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?w=500", title: "Precision Lathe Work", desc: "Custom shafts" },
+  { img: "https://images.unsplash.com/photo-1581093448799-764b32c94f5c?w=500", title: "Structural Welding", desc: "Heavy fabrication" },
+  { img: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=500", title: "CNC Machining", desc: "High precision parts" },
+  { img: "https://images.unsplash.com/photo-1562184557-4f7309ce8f95?w=500", title: "Crane Repair", desc: "Industrial crane overhaul" }
+];
+const wrapper = document.getElementById('portfolioSwiperWrapper');
+if (wrapper) {
+  wrapper.innerHTML = portfolioImages.map(p => `<div class="swiper-slide"><img src="${p.img}" alt="${p.title}"><div style="padding:1rem"><h3>${p.title}</h3><p>${p.desc}</p></div></div>`).join('');
+  portfolioSwiper.update();
+}
+const testimonials = [
+  { text: "TechFix delivered precision parts faster than expected. Their engineering team is world class.", name: "James Ndungu", role: "Operations Manager" },
+  { text: "The frame straightening and welding repair saved our fleet downtime. Exceptional attention to detail.", name: "Grace Wambui", role: "Fleet Supervisor" },
+  { text: "From consulting to delivery, TechFix was professional, on-time, and above industry standard.", name: "Owen Kariuki", role: "Engineering Lead" }
+];
+const testWrapper = document.getElementById('testimonialWrapper');
+if (testWrapper) {
+  testWrapper.innerHTML = testimonials.map(t => `<div class="swiper-slide"><div class="glass" style="padding:2rem;text-align:center"><i class="fas fa-quote-left fa-3x" style="color:var(--yellow);opacity:0.5"></i><p>${t.text}</p><h4>${t.name}</h4><p>${t.role}</p></div></div>`).join('');
+}
